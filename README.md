@@ -82,7 +82,8 @@ Other Roles Include:
 | Week        | Name | Slack Handle |
 |------------ |------|------------  |
 | 01/03/2018 - 01/09/2018 | Vincent La     | @vincela14 |
-| 01/10/2018 - 01/06/2018 | YOUR NAME     | @SLACK HANDLE |
+| 01/10/2018 - 01/16/2018 | Erik Eldridge  | @erikeldridge |
+| 01/17/2018 - 01/23/2018 | YOUR NAME     | @SLACK HANDLE |
 
 #### Other Members:
 
