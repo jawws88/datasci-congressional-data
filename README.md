@@ -2,7 +2,6 @@
 CSUMB in Collaboration with C4SF Data Science Working Group work together to solve problems with Congressional Data
 
 ## Code for San Francisco Support Rotation
-# Syllabus
 | Week        | Name | Slack Handle |
 |------------ |------|------------  |
 | 01/03/2018 - 01/09/2018 | Vincent La     | @vincela14 |
