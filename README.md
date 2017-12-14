@@ -4,22 +4,25 @@ This project is a part of the [Data Science Working Group](http://datascience.co
 #### -- Project Status: [Pre-Launch]
 
 ## Project Intro/Objective
-The purpose of this project is ________. (Describe the main goals of the project and potential civic impact. Limit to a short paragraph, 3-6 Sentences)
+The purpose of this project is to:
+
+1. Analyze congressional data affecting SF and/or Monterey Bay in coordination with C4SF using the [Congressional Data Competition](https://www.challenge.gov/challenge/congressional-data-competition/) as a guiding framework (not absolutely necessary to make a formal submission).
+2. Display findings, eg on a website, Alexa app, etc, conformant with the Congressional Data Competition requirements
+3. The work will be driven by CSUMB students and at the end of the semester the project will be sufficiently documented and in a good enough state to hand off to the broader C4SF group.
 
 ### Partner
-* [Name of Partner organization/Government department etc..]
-* Website for partner
-* Partner contact: [Name of Contact], [slack handle of contact if any]
-* If you do not have a partner leave this section out
+* In parternship with CSUMB Computer Science students completing their capstone project, we will be analyzing Congressional data.
+* CSUMB CST 499 Capstone Project: https://sites.google.com/a/csumb.edu/cst-499-computer-science-capstone-course/mentors-partners
+* Partner contact: Erik Eldridge, [@Erik Eldridge]
 
-### Methods Used
+### Methods Used (unclear for now, leave defaults in)
 * Inferential Statistics
 * Machine Learning
 * Data Visualization
 * Predictive Modeling
 * etc.
 
-### Technologies
+### Technologies (unclear for now, leave the defaults in)
 * R 
 * Python
 * D3
@@ -30,16 +33,26 @@ The purpose of this project is ________. (Describe the main goals of the project
 * etc. 
 
 ## Project Description
-(Provide more detailed overview of the project.  Talk a bit about your data sources and what questions and hypothesis you are exploring. What specific data analysis/visualization and modelling work are you using to solve the problem? What blockers and challenges are you facing?  Feel free to number or bullet point things here)
+The Challenge framing is actually quite broad: the goal is to Create an application, website visualization, or other digital creation that helps analyze Congressional data. As we scope the project further, we will better pinpoint the exact problem we will tackle. For now, here are a list of topics that may be a good fit:
+
+1. How many bills affect SF and/or MB?
+2. Voting patterns - How has your Congressional representative voted over time? Do any factors correlate with a yes vote? Can we predict how she’ll vote on the next bill? How confident are we in the prediction? Can we establish a voting preference profile, eg trained on voter recommendations, and generate an alert when a prediction conflicts with our preference?
+3. Visualizing Gerrymandering - (i.e. can we show evidence of racial gerrymandering, or other illegal/unethical gerrymandering by socio-demographic splits)
+4. Campaign finance - visualizations of sources of funds over time. Is there a correlation between sources of funds and voting behavior?
+
+As we get more specific on which problem we are tackling we will also be able to get more specific about the data sources, questions, and hypotheses we are exploring. In addition, we will specify the output that we expect along with blockers and challenges we face.
 
 ## Needs of this project
 
+- **Project Leads** (From Code for San Francisco): We need project leads that are willing to be a point of contact for the CSUMB students and be an engaging partner in scoping out the problem. We are also considering a "Support Rotation", see proposed schedule below which would consist of a team of project leads from C4SF who will rotate each week on being the mentor.
+
+Other Roles Include:
 - frontend developers
 - data exploration/descriptive statistics
 - data processing/cleaning
 - statistical modeling
 - writeup/reporting
-- etc. (be as specific as possible)
+- However, we should aim that a good chunk of the project will be driven by students.
 
 ## Getting Started
 
