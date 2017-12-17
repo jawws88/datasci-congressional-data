@@ -1,0 +1,5 @@
+name: datasci-congressional-data
+channels:
+- defaults
+prefix: /home/vla/anaconda3/envs/datasci-congressional-data
+
