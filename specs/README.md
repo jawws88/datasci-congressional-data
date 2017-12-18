@@ -9,6 +9,9 @@ We'll use the following template for writing Specs
 ### Goals
 In this section, state the goals of the project
 
+### Resources
+In this section, state the resources this project will require (e.g. Data Science, Design, software engeering). 
+
 ### Dates
 In this section, state three dates: 
 
@@ -26,6 +29,9 @@ A brief description on why we want to work on this project.
 
 ### Definition of Done
 How do we know when we are done? In many cases there are many paths to accomplish the goals we stated above. What is our MVP (minimum viable product)? What would we like to do beyond MVP if we have more time and what additional functionality would that give us? When are we satisfied to call this set of work "done"?
+
+### External Citations
+Is there any other work (whether at Code for San Francisco or at any other organization) that you would like to cite as good examples for what you want to do here?
 
 ### Out of Scope
 Are there any features and/or analysis that seem potentially interesting but are out of scope for this project? This section may be blank. The purpose of this section is to record anything that might seem related, out of scope for this project, but potentially tackled in a future project.
