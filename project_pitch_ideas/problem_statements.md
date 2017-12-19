@@ -13,7 +13,7 @@ A critical issue with campaign finance data is how opaque the system is. However
     3. There is actually some really great prior art here (specific to SF for the 2016 election cycle) here: https://github.com/sfbrigade/campaign_finance
 
 ## Problem Statement 2: Predicting Voting Behavior Based on Funding Sources
-The reason why more transparency in campaign finance data is critical is because, unfortunately, not every official is acting in the best interest of the American public. Money talks. Lawrence Lessig (professor at Harvard Law School) gave an inspiring [TED Talk](https://www.ted.com/talks/lawrence_lessig_we_the_people_and_the_republic_we_must_reclaim) in which he describes how only the top 0.05% of people in America actually financially contribute to poltiical campaigns, and thus exert exorbitant control over our political system. *How can we dive deeper into understanding the link between campaign funding sources and voting behavior?*
+The reason why more transparency in campaign finance data is critical is because, unfortunately, not every official is acting in the best interest of the American public. Money talks. Lawrence Lessig (professor at Harvard Law School) gave an inspiring [TED Talk](https://www.ted.com/talks/lawrence_lessig_we_the_people_and_the_republic_we_must_reclaim) in which he describes how only the top 0.05% of people in America actually financially contribute to poltiical campaigns, and thus exert exorbitant control over our political system. *How can we dive deeper into understanding the link between campaign funding sources and voting behavior? Can we use a model to predict an official's voting behavior and see how it differs from their stated/actual voting behavior?*
 
 ### Challenges
 
