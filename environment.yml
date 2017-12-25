@@ -1,5 +1,13 @@
 name: datasci-congressional-data
 channels:
 - defaults
+dependencies:
+  - python=3.6.0
+  - numpy=1.13.1
+  - pandas=0.20.3
+  - psycopg2=2.7.1
+  - sqlalchemy=1.1
+  - pip:
+    - gitpython==2.1.8
 prefix: /home/vla/anaconda3/envs/datasci-congressional-data
 

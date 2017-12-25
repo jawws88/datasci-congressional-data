@@ -26,11 +26,11 @@ Once you've installed Anaconda's distribution of Python, to clone and activate t
 2. `conda env create -f environment.yml`
     1. This clones the appropriate python environment which should be named `datasci-congressional-data`.
     2. See https://conda.io/docs/using/envs.html#use-environment-from-file for more information.
-3. `source activate datasci-sba`
+3. `source activate datasci-congressional-data`
     1. This activates the conda python environment
     2. **Note you will need to activate the python environment every time you open a new terminal window** 
-4. `pip install -r requirements.txt`
-    1. Install all required Python Pacakges
+4. `conda env update -f environment.yml`
+    1. In the future, if you need to update your environment run the above command.
 
 A useful guide to conda environments: https://conda.io/docs/using/envs.html
 The two important files are:

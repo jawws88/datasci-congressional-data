@@ -4,18 +4,8 @@ import urllib.parse
 import pandas as pd
 import psycopg2 as ps
 import sqlalchemy as sa
-from pandas.io.sql import SQLTable
 
-
-def _execute_insert(self, conn, keys, data_iter):
-    """Optional, but useful: helps Pandas write tables against Postgres much faster.
-    See https://github.com/pydata/pandas/issues/8953 for more info
-    """
-    print("Using monkey-patched _execute_insert")
-    data = [dict((k, v) for k, v in zip(keys, row)) for row in data_iter]
-    conn.execute(self.insert_statement().values(data))
-
-SQLTable._execute_insert = _execute_insert
+from utilities.util_functions import df_to_sql
 
 
 class DBManager(object):
@@ -65,11 +55,11 @@ class DBManager(object):
         self.create_schema(schema=schema)
 
         with self.engine.begin() as conn:
-            df.to_sql(name=table_name,
-                      con=conn,
+            df_to_sql(db_conn=conn,
+                      df=df,
+                      table_name=table_name,
                       schema=schema,
-                      dtype=dtype,
+                      required_type_map=dtype,
                       if_exists=if_exists,
-                      index=index,
-                      chunksize=10000
-                     )
+                      use_index=index,
+                      chunksize=None)

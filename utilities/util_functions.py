@@ -1,7 +1,7 @@
 """Miscellaneous Utility Functions"""
 import csv
 import git
-import logger
+import logging
 import tempfile
 
 LOGGER = logging.getLogger(__name__)
@@ -19,7 +19,8 @@ def df_to_sql(db_conn, df, table_name, schema, required_type_map=None,
               sep='|',
               encoding='utf8',
               temp_file_func=tempfile.SpooledTemporaryFile,
-              if_exists='replace'):
+              if_exists='replace',
+              chunksize=None):
     """Helper for writing a pandas.Dataframe to SQL
     Args:
         db_conn (sqlalchemy.engine.Connection):

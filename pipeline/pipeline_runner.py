@@ -80,9 +80,6 @@ def run_files(dbm, files, db_url):
             p.communicate()
             print("Done running the python file {}".format(file))
         else:
-            #p = subprocess.Popen(['psql', '-d', db_url, '-a', '-f',
-            #                      './pipeline/{}.sql'.format(file)])
-            #p.communicate()
             dbm.write_query_table(sql_utils.get_sql_as_string(SQL_PATH + '/' + file))
             print("Done running SQL file {}".format(file))
         localendtime = dt.datetime.now()
@@ -102,34 +99,19 @@ def main():
 
     # Define the list of tasks that are parse tasks
     parse_tasks = [
-        'parse.00_01_01_load_sba_datasets.py',
-        'parse/00_01_02_sba__foia_7a_1991_1999',
-        'parse/00_01_03_sba__foia_7a_2000_2009',
-        'parse/00_01_04_sba__foia_7a_2010_present',
-        'parse/00_01_05_sba__foia_504_1991_present',
-        'parse.00_02_01_load_census_datasets.py',
-        'parse/00_02_02_census__zip_business_patterns',
-        'parse.00_03_01_load_irs_datasets.py',
-        'parse/00_03_02_irs__zip_data',
+        'parse.00_01_01_load_datasf_campaign_finance.py',
     ]
 
     # Define list of files you want to run
-    tasks = [
-        'queries/stg_analytics/00_00_create_schema',
-        'queries/stg_analytics/00_01_01_sba_sfdo_zips',
-        'queries/stg_analytics/00_01_02_sba_sfdo',
-        'queries.stg_analytics.00_01_03_sba_sfdo_api_calls.py',
-        'queries/stg_analytics/00_01_04_sba_sfdo_all',
-        'queries/stg_analytics/00_02_irs_income',
-        'queries/stg_analytics/00_03_census_naics',
-        'queries/trg_analytics/00_01_sba_region_level',
-    ]
+    tasks = []
 
     if args.run_parse:
         files = parse_tasks + tasks
     else:
         files = tasks
 
+    print('files are')
+    print(files)
     # Run files
     run_files(dbm, files, args.db_url)
 
