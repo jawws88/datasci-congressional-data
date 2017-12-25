@@ -1,7 +1,10 @@
 # Explore the data
-## SQL
-Use basic SQL to query and explore the data! We now use Mode Analytics as a frontend tool to query our PostgreSQL database hosted on Microsoft Azure. Ping the #datascience Slack Channel if you need access to Mode.
-https://modeanalytics.com/editor/code_for_san_francisco
+## SQL/Python
+Use basic SQL/Python to query and explore the data! We now use [Mode Analytics](https://modeanalytics.com/editor/code_for_san_francisco) as a frontend tool to query our PostgreSQL database hosted on Microsoft Azure. Ping the #datascience Slack Channel if you need access to Mode.
+
+We've connected Mode Analytics to our PostgreSQL database hosted on Microsoft Azure. Thus, in Mode, you can create a new report and query off of our database, which is called 'data-sci-congressional-data'.
+
+**Note, please only run "ready only" queries in Mode. It is not a good idea to run DML/DDL statements that write to the database in Mode since there is no history or record of what is being done**.
 
 ## Data
 
