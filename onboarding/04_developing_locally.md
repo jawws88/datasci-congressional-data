@@ -84,3 +84,7 @@ You can also just remove the old version of postgresql. In this case, the old ve
 ```
 sudo apt-get remove postgresql-client-9.5
 ```
+
+| Previous | Next |
+|:---------|-----:|
+| [Tips and Tricks](./03_tips_and_tricks.md) | [Domain Knowledge](./05_domain_knowledge.md)|
