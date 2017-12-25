@@ -4,7 +4,7 @@ Use basic SQL/Python to query and explore the data! We now use [Mode Analytics](
 
 We've connected Mode Analytics to our PostgreSQL database hosted on Microsoft Azure. Thus, in Mode, you can create a new report and query off of our database, which is called 'data-sci-congressional-data'.
 
-**Note, please only run "ready only" queries in Mode. It is not a good idea to run DML/DDL statements that write to the database in Mode since there is no history or record of what is being done**.
+**Note, please only run "read only" queries in Mode. It is not a good idea to run DML/DDL statements that write to the database in Mode since there is no history or record of what is being done**.
 
 ## Data
 
