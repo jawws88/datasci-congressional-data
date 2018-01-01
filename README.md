@@ -98,6 +98,6 @@ Other Roles Include:
 * Feel free to contact team leads with any questions or if you are interested in contributing!
 
 ## Related Works/Interesting Links
-Predicint US Federal Campaign Contributions using Demographic Data at the Zip code level: https://github.com/tejeffers/MoneyTalks
+Predicting US Federal Campaign Contributions using Demographic Data at the Zip code level: https://github.com/tejeffers/MoneyTalks
 
 
