@@ -100,4 +100,5 @@ Other Roles Include:
 ## Related Works/Interesting Links
 Predicting US Federal Campaign Contributions using Demographic Data at the Zip code level: https://github.com/tejeffers/MoneyTalks
 
+2015 Code for San Francisco Campaign Finance Blog: http://codeforsanfrancisco.org/blog/post/April-12-2015-Campaign-Finance-Summit
 
