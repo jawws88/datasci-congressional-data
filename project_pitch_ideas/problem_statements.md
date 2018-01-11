@@ -25,3 +25,6 @@ The reason why more transparency in campaign finance data is critical is because
     
 ### Notes
 1. Does candidate with the most funding usually win?
+2. Which districts are contestable? ballotpedia is a potential source
+3. How does campaign finance impact incumbant advantage? Can I be alerted if some out of money can influence the outcome of an advantage?
+4. Can we predict the probability of a candidate winning based on funding? If so can we build a cool web application that shows amount of money necessary (e.g. kickstarter) to push candidate over 50% of winning?
