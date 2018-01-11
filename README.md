@@ -95,6 +95,7 @@ Other Roles Include:
 ## Contact
 * If you haven't joined the SF Brigade Slack, [you can do that here](http://c4sf.me/slack).  
 * Our slack channel is `#datasci-congressdata`
+* We'll use a [Trello dashboard](https://trello.com/b/POoUzZmJ/congressional-data) to organize work
 * Feel free to contact team leads with any questions or if you are interested in contributing!
 
 ## Related Works/Interesting Links
