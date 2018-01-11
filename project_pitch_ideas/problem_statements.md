@@ -22,3 +22,6 @@ The reason why more transparency in campaign finance data is critical is because
     1. For example: https://www.couragescore.org/, although I'm not sure how reliable this specific one is
 3. Build a predictive model that combines campaign finance data with voting records to see how tightly related funding sources are with voting behavior.
     1. This may eventually also include combining other sources of data (e.g. demographic data at the zip code level)
+    
+### Notes
+1. Does candidate with the most funding usually win?
