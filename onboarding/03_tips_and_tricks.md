@@ -16,10 +16,25 @@ To change between branches:
 ```
 $ git checkout <branch-name>
 ```
-Do some work:  
+
+Do some work:
+
+For editing code, feel free to use whatever text editor you are comfortable with. However, we do recommend to use a **text editor** as opposed to a word processor (e.g. Microsoft Word) because a word processor will typically add markups which are not useful for code.
+
+If you don't have an already preferred text editor, we recommend using [Sublime Text 3](https://www.sublimetext.com/3). You can download it for free with an "unlimited" trial period.
+
+Once you've downloaded Sublime Text 3, it's usually helpful to be able to open Sublime Text 3 from the command line. This allows you to edit files much easier. To do this, add the following line to your `~/.bash_profile`:
+
 ```
-$ vim <some-files>
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 ```
+
+Then, to open a text file using Sublime from the command line, you can do:
+
+```
+$ subl <some-files>
+```
+
 When you're ready, commit, [merge any upstream changes](https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/), [deal with conflicts](https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/), and push your branch
 ```
 $ git add <edited-files>
@@ -28,7 +43,7 @@ $ git push
 ```
 [Create a Pull Request](https://help.github.com/articles/creating-a-pull-request/) from your pushed branch (compare branch) to the master branch
 
-Another handy thing while working in terminal is to automatically show what branch you're working on in the command line. To do this, add the following your your `.bash_profile`
+Another handy thing while working in terminal is to automatically show what branch you're working on in the command line. To do this, add the following your your `~/.bash_profile`
 
 ```
 parse_git_branch() {
@@ -53,6 +68,6 @@ See https://github.com/sfbrigade/datasci-congressional-data/blob/master/notebook
 
 - D3 Visualization Package - One-time free course at Rithm School (via meetup.com): https://www.meetup.com/meetup-code-your-face-off/events/241379532/
 
-| Previous | 
-|:---------|
-| [Development Environment](./02_development_environment.md) |
+| Previous | Next |
+|:---------| ----:|
+| [Development Environment](./02_development_environment.md) | [Developing Locally](./04_developing_locally.md)|
