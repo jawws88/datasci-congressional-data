@@ -19,22 +19,17 @@ As an optional component to this project, Challenge.gov is currently sponsoring 
 * CSUMB CST 499 Capstone Project: https://sites.google.com/a/csumb.edu/cst-499-computer-science-capstone-course/mentors-partners
 * Partner contact: Erik Eldridge, [@Erik Eldridge]
 
-### Methods Used (unclear for now, leave defaults in)
+### Methods Used
 * Inferential Statistics
 * Machine Learning
 * Data Visualization
 * Predictive Modeling
-* etc.
 
-### Technologies (unclear for now, leave the defaults in)
-* R 
+### Technologies
 * Python
-* D3
-* PostGres, MySql
-* Pandas, jupyter
-* HTML
-* JavaScript
-* etc. 
+* PostgreSQL
+* Pandas, Jupyter
+* Mode Analytics
 
 ## Needs of this project
 
