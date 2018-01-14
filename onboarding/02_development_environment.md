@@ -42,6 +42,14 @@ Before cloning the repository, we recommend you install Git Large File Storage. 
 
 To install visit their [home page](https://git-lfs.github.com/) and/or view the installation [wiki instructions](https://github.com/git-lfs/git-lfs/wiki/Installation).
 
+For example, on MAC OS, you will need to run the following. In addition, you may need to install [Home Brew](https://brew.sh/).
+
+```
+brew update
+brew install git-lfs
+git lfs install
+```
+
 Once you have installed Git Large File Storage, clone the repository by running one of the following in your terminal. We recommend using SSH since that'll allow you to push/pull without authenticating every time.
 
 ```
