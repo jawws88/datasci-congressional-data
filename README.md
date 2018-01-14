@@ -4,14 +4,18 @@ This project is a part of the [Data Science Working Group](http://datascience.co
 #### -- Project Status: [Kicked Off!]
 
 ## Project Intro/Objective
-The purpose of this project is to:
+Campaign finance in the U.S is the key to the system of corruption that has now wrecked our government. Members and candidates for Congress spend anywhere between 30% to 70% of their time raising money to get themselves (re)elected. But who and how many people actually contribute to these campaigns?
 
-1. Analyze congressional data affecting SF and/or Monterey Bay in coordination with C4SF using the [Congressional Data Competition](https://www.challenge.gov/challenge/congressional-data-competition/) as a guiding framework (not absolutely necessary to make a formal submission).
-2. Display findings, eg on a website, Alexa app, etc, conformant with the Congressional Data Competition requirements
-3. The work will be driven by CSUMB students and at the end of the semester the project will be sufficiently documented and in a good enough state to hand off to the broader C4SF group.
+It turns out that only a tiny fraction of the 1% are actually "relevant funders" of congressional campaigns. In other words, 150,000 Americans wield enormous power over this government. Furthermore, our government is supposed to represent the public, but with so few making meaningful financial contributions, how do we know if our elected officials are not answering to special demands these "funders" make?
+
+This challenge and the problems we face is described beautifully in Lawrence Lessig's [TED Talk](https://www.ted.com/talks/lawrence_lessig_we_the_people_and_the_republic_we_must_reclaim) in which he discusses the problems of Campaign Finance in America as the number one issue that blocks progress on every other issue.
+
+The goals of this project are to use data and technology to (1) provide more transparency of campaign finance at the local, state, or even federal level and (2) investigate how campaign finance contributions affect elected officials' behavior. Our current problem statements can be found [here](./project_pitch_ideas/problem_statements.md).
+
+As an optional component to this project, Challenge.gov is currently sponsoring a [Congressional Data Competition](https://www.challenge.gov/challenge/congressional-data-competition/). The Challenge framing is actually quite broad: the goal is to Create an application, website visualization, or other digital creation that helps analyze Congressional data. As an optional component, we can have as a deliverable to submit to this competition (there is a $5,000 prize)!
 
 ### Partner
-* In parternship with CSUMB Computer Science students completing their capstone project, we will be analyzing Congressional data.
+* In parternship with CSUMB Computer Science students completing their capstone project, we will be analyzing Congressional data with a focus on campaign finance data.
 * CSUMB CST 499 Capstone Project: https://sites.google.com/a/csumb.edu/cst-499-computer-science-capstone-course/mentors-partners
 * Partner contact: Erik Eldridge, [@Erik Eldridge]
 
@@ -32,16 +36,6 @@ The purpose of this project is to:
 * JavaScript
 * etc. 
 
-## Project Description
-The Challenge framing is actually quite broad: the goal is to Create an application, website visualization, or other digital creation that helps analyze Congressional data. As we scope the project further, we will better pinpoint the exact problem we will tackle. For now, here are a list of topics that may be a good fit:
-
-1. How many bills affect SF and/or MB?
-2. Voting patterns - How has your Congressional representative voted over time? Do any factors correlate with a yes vote? Can we predict how she’ll vote on the next bill? How confident are we in the prediction? Can we establish a voting preference profile, eg trained on voter recommendations, and generate an alert when a prediction conflicts with our preference?
-3. Visualizing Gerrymandering - (i.e. can we show evidence of racial gerrymandering, or other illegal/unethical gerrymandering by socio-demographic splits)
-4. Campaign finance - visualizations of sources of funds over time. Is there a correlation between sources of funds and voting behavior?
-
-As we get more specific on which problem we are tackling we will also be able to get more specific about the data sources, questions, and hypotheses we are exploring. In addition, we will specify the output that we expect along with blockers and challenges we face.
-
 ## Needs of this project
 
 - **Project Leads** (From Code for San Francisco): We need project leads that are willing to be a point of contact for the CSUMB students and be an engaging partner in scoping out the problem. We are also considering a "Support Rotation", see proposed schedule below which would consist of a team of project leads from C4SF who will rotate each week on being the mentor.
@@ -52,27 +46,10 @@ Other Roles Include:
 - data processing/cleaning
 - statistical modeling
 - writeup/reporting
-- However, we should aim that a good chunk of the project will be driven by students.
 
 ## Getting Started
 
-1. Clone this repo (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/)).
-2. Raw Data is being kept [here](Repo folder containing raw data) within this repo.
-
-    *If using offline data mention that and how they may obtain the data from the froup)*
-    
-3. Data processing/transformation scripts are being kept [here](Repo folder containing data processing scripts/notebooks)
-4. etc...
-
-*If your project is well underway and setup is fairly complicated (ie. requires installation of many packages) create another "setup.md" file and link to it here*  
-
-5. Follow setup [instructions](Link to file)
-
-## Featured Notebooks/Analysis/Deliverables
-* [Notebook/Markdown/Slide Deck Title](link)
-* [Notebook/Markdown/Slide DeckTitle](link)
-* [Blog Post](link)
-
+Please go to the [Onboarding](./onboarding) docs to start contributing to this project!
 
 ## Contributing DSWG Members
 
@@ -103,4 +80,9 @@ Other Roles Include:
 Predicting US Federal Campaign Contributions using Demographic Data at the Zip code level: https://github.com/tejeffers/MoneyTalks
 
 2015 Code for San Francisco Campaign Finance Blog: http://codeforsanfrancisco.org/blog/post/April-12-2015-Campaign-Finance-Summit
+
+Note while the main focus of this project will be on campaign finance, there are undoubtedly other very interesting questions using congressional data. Some additional ideas include:
+
+1. Voting patterns - How has your Congressional representative voted over time? Do any factors correlate with a yes vote? Can we predict how she’ll vote on the next bill? How confident are we in the prediction? Can we establish a voting preference profile, eg trained on voter recommendations, and generate an alert when a prediction conflicts with our preference?
+2. Visualizing Gerrymandering - (i.e. can we show evidence of racial gerrymandering, or other illegal/unethical gerrymandering by socio-demographic splits)
 
