@@ -58,6 +58,11 @@ To download Postgres: http://oscg-downloads.s3.amazonaws.com/packages/PostgreSQL
 
 For further instructions: https://medium.com/@colinrubbert/installing-ruby-on-rails-in-windows-10-w-bash-postgresql-e48e55954fbf
 
+## Installing Git Large File Storage
+[Git Large File Storage](https://git-lfs.github.com/) is an open source Git extension for versioning large files. This can be a useful tool for storing large files using Git.
+
+To install visit their [home page](https://git-lfs.github.com/) and/or view the installation [wiki instructions](https://github.com/git-lfs/git-lfs/wiki/Installation).
+
 ## Tech Stack
 
 Here are the technologies used in the project, along with some tutorials if you'd like to learn.
