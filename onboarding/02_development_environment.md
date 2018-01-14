@@ -1,7 +1,9 @@
 # Development Environment Setup
 In this doc, we will go through things you need to install to get on the right "development environment" so that you can start contributing.
 
-If you're on a Mac or PC you should be fine. The only caveat is that with PC, I would highly recommend using [Bash on ubuntu on Windows](https://msdn.microsoft.com/en-us/commandline/wsl/about) which provides a Linux environment without needing to spin up an entire Linux virtual machine! I also think working in a unix-like environment is great experience, especially in the tech world.
+The instructions here mostly assume that you are working in a "Linux-like" environment. Without getting too much into the technical details, if you're using a Mac, then you should be fine without too much overhead.
+
+If you're on a Windows, we highly recommend using [Bash on ubuntu on Windows](https://msdn.microsoft.com/en-us/commandline/wsl/about) which provides a Linux environment without needing to spin up an entire Linux virtual machine! (This will only work on Windows 10, if you're on a earlier version, we highly recommend upgrading to the latest version of Windows 10.) To install, follow the [installation guide](https://docs.microsoft.com/en-us/windows/wsl/install-win10). I also think working in a unix-like environment is great experience, especially in the tech world.
 
 The following things that **must** be done are:
 
