@@ -15,7 +15,7 @@ To complete these questions, use the table `trg_analytics.candidate_contribution
 2. What is the total sum of donations made to candidates in the 2017-2018 election cycle?
 3. Across history what are the top 5 zip codes ranked according to the donations sourced from those areas? Which cities are these zip codes located in? Do you notice anything surprising?
 4. In the 2015-2016 election cycle, which candidate received the most donations?
-5. For the candidate you found in question (3) above, who was their highest contributing donor?
+5. For the candidate you found in question (4) above, who was their highest contributing donor?
 6. In the 2017-2018 election cycle, how many donors comprised of 50% of all donations made?
-7. Repeat (5) for all the other election cycles (currently the dataset includes election cycles starting in 2001). Does the number of donors who comprise of 50% of all donations made within each election cycle change over time?
+7. Repeat (6) for all the other election cycles (currently the dataset includes election cycles starting in 2001). Does the number of donors who comprise of 50% of all donations made within each election cycle change over time?
 8. Explore the data independently and report one additional finding you think is interesting!
