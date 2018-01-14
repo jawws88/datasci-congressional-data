@@ -22,7 +22,7 @@ def get_args():
     return parser.parse_args()
 
 
-def load_sba_datasets(dbm, direc):
+def load_datasets(dbm, direc):
     """Data SF Campaign Finance Data
 
     Keyword Args:
@@ -46,7 +46,7 @@ def main():
     dbm = DBManager(db_url=args.db_url)
     git_root_dir = uf.get_git_root(os.path.dirname(__file__))
     directory = os.path.join(git_root_dir, 'src')
-    load_sba_datasets(dbm, directory)
+    load_datasets(dbm, directory)
 
 
 if __name__ == '__main__':

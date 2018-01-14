@@ -35,9 +35,7 @@ Once you've installed Anaconda's distribution of Python, to clone and activate t
     1. In the future, if you need to update your environment run the above command.
 
 A useful guide to conda environments: https://conda.io/docs/using/envs.html
-The two important files are:
-1. https://github.com/sfbrigade/datasci-sba/blob/master/environment.yml
-2. https://github.com/sfbrigade/datasci-sba/blob/master/requirements.txt
+The [environment.yml](../environment.yml) file must be kept up to date and is how we will ensure that every group member is on the same environment so any work we do on any machine is reproducible on any other machine.
 
 ## Clone the Repository
 Before cloning the repository, we recommend you install Git Large File Storage. [Git Large File Storage](https://git-lfs.github.com/) is an open source Git extension for versioning large files. This can be a useful tool for storing large files using Git. This will be useful since we will be storing somewhat large source data files in our repository.
@@ -88,14 +86,13 @@ Here are the technologies used in the project, along with some tutorials if you'
 |------|---------|---------|-----------------|
 | Git | 2.4+ | Version control | [Udacity course](https://classroom.udacity.com/courses/ud775), [good comprehensive online book](https://git-scm.com/book/en/v2) |
 | Postgres | 9.6 | Database | [Tutorial](https://www.postgresql.org/docs/8.0/static/tutorial.html) |
-| SQL | |  Language used for database queries | [Tutorial from Postgres site](https://www.postgresql.org/docs/8.0/static/tutorial-sql.html) |
+| PostgreSQL | |  Language used for database queries | [Tutorial from Postgres site](https://www.postgresql.org/docs/9.6/static/tutorial.html) |
 | Python | v3 | Data Analysis & Webserver | [Anaconda](https://www.continuum.io/downloads), [Python Language Tutorial](https://docs.python.org/3/tutorial/) |
+| Mode Analytics| | Online Application for SQL/Python Reporting and Analyses | [The SQL Tutorial for Data Analysis](https://community.modeanalytics.com/sql/tutorial/introduction-to-sql/)
 | SciPy | | Python packages for data analysis | [Intro to Pandas](http://pandas.pydata.org/pandas-docs/stable/10min.html), [NumPy Tutorial](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html) |
 | Jupyter | | Easily share Python analysis with code and results | [Quickstart guide](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/) |
-| Django | 1.11.4 | Python webserver | Read the tutorial [here](https://docs.djangoproject.com/en/1.11/intro/), but install using `conda install django` |
-| Javascript | ES2015 / ES6 | Clientside scripting language | [Tutorial covering modern JS](https://javascript.info/), [Quick reference of ES6 features](http://es6-features.org/) |
-| Redux | 3.7.2 | Clientside state management | [Docs](http://redux.js.org/), [Good introductory videos](https://egghead.io/courses/getting-started-with-redux) |
-| jQuery | 3.2.1 | Clientside DOM manipulation | [Tutorial](https://www.tutorialspoint.com/jquery/jquery-overview.htm) |
+
+As we move forward with the project, we will undoubtedly add Front End technologies as well. Add these in later!
 
 | Previous | Next |
 |:---------|-----:|
