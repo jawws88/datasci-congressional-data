@@ -38,7 +38,19 @@ The two important files are:
 2. https://github.com/sfbrigade/datasci-sba/blob/master/requirements.txt
 
 ## Clone the Repository
-`git clone https://github.com/sfbrigade/datasci-congressional-data.git`
+Before cloning the repository, we recommend you install Git Large File Storage. [Git Large File Storage](https://git-lfs.github.com/) is an open source Git extension for versioning large files. This can be a useful tool for storing large files using Git. This will be useful since we will be storing somewhat large source data files in our repository.
+
+To install visit their [home page](https://git-lfs.github.com/) and/or view the installation [wiki instructions](https://github.com/git-lfs/git-lfs/wiki/Installation).
+
+Once you have installed Git Large File Storage, clone the repository by running one of the following in your terminal. We recommend using SSH since that'll allow you to push/pull without authenticating every time.
+
+```
+# If using HTTPS
+git clone https://github.com/sfbrigade/datasci-congressional-data.git
+
+# If using SSH
+git clone git@github.com:sfbrigade/datasci-congressional-data.git
+```
 
 ## Connecting to our database
 In your ~/.bash_profile you need to set up environment variables corresponding to the database credentials. Slack the #university group for the appropriate credentials
@@ -57,11 +69,6 @@ You can also install Postgres via HomeBrew: https://brew.sh/
 To download Postgres: http://oscg-downloads.s3.amazonaws.com/packages/PostgreSQL-9.6.2-2-win64-bigsql.exe
 
 For further instructions: https://medium.com/@colinrubbert/installing-ruby-on-rails-in-windows-10-w-bash-postgresql-e48e55954fbf
-
-## Installing Git Large File Storage
-[Git Large File Storage](https://git-lfs.github.com/) is an open source Git extension for versioning large files. This can be a useful tool for storing large files using Git.
-
-To install visit their [home page](https://git-lfs.github.com/) and/or view the installation [wiki instructions](https://github.com/git-lfs/git-lfs/wiki/Installation).
 
 ## Tech Stack
 
