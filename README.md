@@ -83,7 +83,9 @@ Other Roles Include:
 |------------ |------|------------  |
 | 01/03/2018 - 01/09/2018 | Vincent La     | @vincela14 |
 | 01/10/2018 - 01/16/2018 | Erik Eldridge  | @erikeldridge |
-| 01/17/2018 - 01/23/2018 | YOUR NAME     | @SLACK HANDLE |
+| 01/17/2018 - 01/23/2018 | Vincent La     | @vincela14 |
+| 01/24/2018 - 01/30/2018 | Vincent La     | @vincela14 |
+| FUTURE DATE | YOUR NAME     | YOUR SLACK HANDLE |
 
 #### Other Members:
 
