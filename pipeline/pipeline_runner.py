@@ -99,11 +99,17 @@ def main():
 
     # Define the list of tasks that are parse tasks
     parse_tasks = [
-        'parse.00_01_01_load_datasf_campaign_finance.py',
+        'parse.load_datasf_campaign_finance.py',
+        'parse.load_maplight_california.py',
     ]
 
     # Define list of files you want to run
-    tasks = []
+    tasks = [
+        'queries/stg_analytics/create_schema',
+        'queries/stg_analytics/stg_candidate_contributions',
+        'queries/trg_analytics/create_schema',
+        'queries/trg_analytics/candidate_contributions',
+    ]
 
     if args.run_parse:
         files = parse_tasks + tasks

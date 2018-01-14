@@ -1,8 +1,9 @@
 # What is the Congressional Data project about?
 
 ## Context 
+The inspiration for this project comes from the [Congressional Data Competition](https://www.challenge.gov/challenge/congressional-data-competition/) sponsored by Challenge.gov. We will specifically focus on Campaign Finance issues both federally and in the state of California.
 
-
+This folder contains instructions for onboarding onto this project. In addition, please check out the [Data Scavenger Hunt](../data_scavenger_hunt) which is a series of questions to acquaint you with the datasets, learn the tools used in this project, and get you familiar with the structure of the database.
 
 ## The details
 See the [README.md](../README.md)
