@@ -72,11 +72,7 @@ Please go to the [Onboarding](./onboarding) docs to start contributing to this p
 * We'll use a [Trello dashboard](https://trello.com/b/POoUzZmJ/congressional-data) to organize work
 * Feel free to contact team leads with any questions or if you are interested in contributing!
 
-## Related Works/Interesting Links
-Predicting US Federal Campaign Contributions using Demographic Data at the Zip code level: https://github.com/tejeffers/MoneyTalks
-
-2015 Code for San Francisco Campaign Finance Blog: http://codeforsanfrancisco.org/blog/post/April-12-2015-Campaign-Finance-Summit
-
+## Appendix
 Note while the main focus of this project will be on campaign finance, there are undoubtedly other very interesting questions using congressional data. Some additional ideas include:
 
 1. Voting patterns - How has your Congressional representative voted over time? Do any factors correlate with a yes vote? Can we predict how she’ll vote on the next bill? How confident are we in the prediction? Can we establish a voting preference profile, eg trained on voter recommendations, and generate an alert when a prediction conflicts with our preference?

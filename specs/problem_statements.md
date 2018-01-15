@@ -23,6 +23,14 @@ The reason why more transparency in campaign finance data is critical is because
 3. Build a predictive model that combines campaign finance data with voting records to see how tightly related funding sources are with voting behavior.
     1. This may eventually also include combining other sources of data (e.g. demographic data at the zip code level)
     
+# Related Works
+In this section, we'll document other people's works around campaign finance that may serve as inspiration for ours:
+
+1. Predicting US Federal Campaign Contributions using Demographic Data at the Zip code level: https://github.com/tejeffers/MoneyTalks
+2. 2015 Code for San Francisco Campaign Finance Blog: http://codeforsanfrancisco.org/blog/post/April-12-2015-Campaign-Finance-Summit
+3. Explore Campaign Finance: http://www.explorecampaignfinance.com/. Website for visualizing campaign finance contributions for federal level politicians.
+
+
 ### Notes
 1. Does candidate with the most funding usually win?
 2. Which districts are contestable? ballotpedia is a potential source
