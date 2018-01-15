@@ -7,11 +7,11 @@ Currently, the table only has California candidate donation data sourced from ma
 drop table if exists trg_analytics.candidate_contributions;
 create table trg_analytics.candidate_contributions
 (
+  transaction_id text,
   transaction_type text,
   election_cycle text,
   election date,
   primary_general_indicator int,
-  transaction_id  text, 
   transaction_date date,
   transaction_amount numeric,
   filed_date date,
@@ -34,17 +34,18 @@ create table trg_analytics.candidate_contributions
   donor_committee_id text,
   donor_committee_name text,
   donor_committee_type text,
-  donor_committee_party text
+  donor_committee_party text,
+  primary key (transaction_id)
 );
 
 insert into trg_analytics.candidate_contributions
 
 select
+  transaction_id,
   transaction_type,
   election_cycle,
-  election, 
+  election,
   primary_general_indicator,
-  transaction_id,
   transaction_date,
   transaction_amount,
   filed_date,
