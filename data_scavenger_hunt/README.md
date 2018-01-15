@@ -8,6 +8,8 @@ To complete the Data Scavenger Hunt, you can either use:
 
 We highly encourage you to save your work and push to this repository. To do this, create a new folder in the [submissions](./submissions) folder titled with your name and save any relevant files in your folder!
 
+Lastly, before getting started if you haven't had prior experience using SQL and/or Python for data analysis, Mode Analytics' [Tutorial for Data Analysis](https://community.modeanalytics.com/sql/tutorial/introduction-to-sql/) is a great way to get started. This tutorial both has SQL and Python lessons and is a great way to get accustomed to Mode Analytics as an application to query our databases.
+
 ## Questions
 To complete these questions, use the table `trg_analytics.candidate_contributions`. This table is a list of contributions made to Candidates and Other Committees in California.
 

@@ -16,10 +16,25 @@ To change between branches:
 ```
 $ git checkout <branch-name>
 ```
-Do some work:  
+
+Do some work:
+
+For editing code, feel free to use whatever text editor you are comfortable with. However, we do recommend to use a **text editor** as opposed to a word processor (e.g. Microsoft Word) because a word processor will typically add markups which are not useful for code.
+
+If you don't have an already preferred text editor, we recommend using [Sublime Text 3](https://www.sublimetext.com/3). You can download it for free with an "unlimited" trial period.
+
+Once you've downloaded Sublime Text 3, it's usually helpful to be able to open Sublime Text 3 from the command line. This allows you to edit files much easier. To do this, add the following line to your `~/.bash_profile`:
+
 ```
-$ vim <some-files>
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 ```
+
+Then, to open a text file using Sublime from the command line, you can do:
+
+```
+$ subl <some-files>
+```
+
 When you're ready, commit, [merge any upstream changes](https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/), [deal with conflicts](https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/), and push your branch
 ```
 $ git add <edited-files>
@@ -28,7 +43,7 @@ $ git push
 ```
 [Create a Pull Request](https://help.github.com/articles/creating-a-pull-request/) from your pushed branch (compare branch) to the master branch
 
-Another handy thing while working in terminal is to automatically show what branch you're working on in the command line. To do this, add the following your your `.bash_profile`
+Another handy thing while working in terminal is to automatically show what branch you're working on in the command line. To do this, add the following to your `~/.bash_profile`
 
 ```
 parse_git_branch() {
@@ -38,11 +53,44 @@ export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 ```
 
 ## Using the Jupyter Notebook
-To access the Jupyter notebook, type ```$ jupyter notebook``` on Mac or ```$ jupyter notebook --no-browser``` on Windows. It will say "The Jupyter terminal is running at http://localhost:8888/sometoken." Copy the link and paste it in your browser. 
+To access the Jupyter notebook, on Mac OS:
 
-If you have a Windows computer and are using Bash on Ubuntu on Windows, you may see an error message about a "dead kernel." [The fix](http://sdsawtelle.github.io/blog/output/bash-and-ipython-on-ubuntu-for-windows.html) is to type in Bash the following: ```$ conda install -c jzuhone zeromq=4.1.dev0```. To learn more about why this works, [click here.](http://sdsawtelle.github.io/blog/output/bash-and-ipython-on-ubuntu-for-windows.html)
+```
+$ jupyter notebook
+```
+
+On Windows :
+```
+$ jupyter notebook --no-browser
+```
+
+This may say "The Jupyter terminal is running at http://localhost:8888/sometoken." Copy the link and paste it in your browser. 
+
+If you have a Windows computer and are using Bash on Ubuntu on Windows, you may also see an error message about a "dead kernel." [The fix](http://sdsawtelle.github.io/blog/output/bash-and-ipython-on-ubuntu-for-windows.html) is to type in Bash the following: ```$ conda install -c jzuhone zeromq=4.1.dev0```. To learn more about why this works, [click here.](http://sdsawtelle.github.io/blog/output/bash-and-ipython-on-ubuntu-for-windows.html)
+
+Another common issue with using Jupyter and Anaconda Python environments, is that the Jupyter Kernel may not be set to the appropriate environment. This is discussed in [this Stack Overflow post](https://stackoverflow.com/questions/39604271/conda-environments-not-showing-up-in-jupyter-notebook) and the [official docs](http://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments). To address this issue, you will need to run:
+
+```
+$ source activate datasci-congressional-data
+$ python -m ipykernel install --user --name datasci-congressional-data --display-name "Python (datasci-congressional-data)"
+```
+
+Then in your Jupyter notebook, you will need to make sure you set your Kernel to the "Python (datasci-congressional-data)". If you have trouble with this, please ping the Slack Channel #datasci-congressdata and/or talk to a project lead.
+
+Note, if you ever need to remove a kernel (which you should not generally have to do) you can run:
+
+```
+sudo jupyter kernelspec uninstall datasci-congressional-data
+```
+
+For example, if you were to leave the project (hopefully not!!) and don't want unused kernels lying around on your machine you can run the above to remove it.
 
 ## Querying tables in our database
+There are at least two main ways to query tables in our database.
+
+1. Mode Analytics: For quick querying and analysis, we use [Mode Analytics](https://modeanalytics.com/home/code_for_san_francisco) which is already connected to our database and allows users to use SQL or Python to query and analyze the data. As an example, here's a [report](https://modeanalytics.com/code_for_san_francisco/reports/fda5b308bbd1) that does some basic SQL querying and aggregations.
+2. Using Jupyter Notebook: You can also use Python to query the data. A Jupyter notebook is a great way to run Python interactively for quicker results. Note that you will need to get access to our database credentials to query the database directly. If you do not have this already, ping the Slack channel at #datasci-congressdata or ask a project lead.
+
 See https://github.com/sfbrigade/datasci-congressional-data/blob/master/notebooks/query_sql_template.ipynb as an example to query tables in the database
 
 ## Educational Resources
@@ -51,8 +99,8 @@ See https://github.com/sfbrigade/datasci-congressional-data/blob/master/notebook
 
 - HTML and CSS - Free online course at Udacity: https://classroom.udacity.com/courses/ud304
 
-- D3 Visualization Package - One-time free course at Rithm School (via meetup.com): https://www.meetup.com/meetup-code-your-face-off/events/241379532/
+- SQL and Python for Data Analyis at Mode Analytics: https://community.modeanalytics.com/sql/tutorial/introduction-to-sql/
 
-| Previous | 
-|:---------|
-| [Development Environment](./02_development_environment.md) |
+| Previous | Next |
+|:---------| ----:|
+| [Development Environment](./02_development_environment.md) | [Developing Locally](./04_developing_locally.md)|

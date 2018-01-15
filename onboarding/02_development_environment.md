@@ -1,7 +1,9 @@
 # Development Environment Setup
 In this doc, we will go through things you need to install to get on the right "development environment" so that you can start contributing.
 
-If you're on a Mac or PC you should be fine. The only caveat is that with PC, I would highly recommend using [Bash on ubuntu on Windows](https://msdn.microsoft.com/en-us/commandline/wsl/about) which provides a Linux environment without needing to spin up an entire Linux virtual machine! I also think working in a unix-like environment is great experience, especially in the tech world.
+The instructions here mostly assume that you are working in a "Linux-like" environment. Without getting too much into the technical details, if you're using a Mac, then you should be fine without too much overhead.
+
+If you're on a Windows, we highly recommend using [Bash on ubuntu on Windows](https://msdn.microsoft.com/en-us/commandline/wsl/about) which provides a Linux environment without needing to spin up an entire Linux virtual machine! (This will only work on Windows 10, if you're on a earlier version, we highly recommend upgrading to the latest version of Windows 10.) To install, follow the [installation guide](https://docs.microsoft.com/en-us/windows/wsl/install-win10). I also think working in a unix-like environment is great experience, especially in the tech world.
 
 The following things that **must** be done are:
 
@@ -32,15 +34,22 @@ Once you've installed Anaconda's distribution of Python, to clone and activate t
 4. `conda env update -f environment.yml`
     1. In the future, if you need to update your environment run the above command.
 
-A useful guide to conda environments: https://conda.io/docs/using/envs.html
-The two important files are:
-1. https://github.com/sfbrigade/datasci-sba/blob/master/environment.yml
-2. https://github.com/sfbrigade/datasci-sba/blob/master/requirements.txt
+For further information, here is a useful guide to conda environments: https://conda.io/docs/using/envs.html.
+
+Note, the [environment.yml](../environment.yml) file must be kept up to date and is how we will ensure that every group member is on the same environment so any work we do on any machine is reproducible on any other machine.
 
 ## Clone the Repository
 Before cloning the repository, we recommend you install Git Large File Storage. [Git Large File Storage](https://git-lfs.github.com/) is an open source Git extension for versioning large files. This can be a useful tool for storing large files using Git. This will be useful since we will be storing somewhat large source data files in our repository.
 
 To install visit their [home page](https://git-lfs.github.com/) and/or view the installation [wiki instructions](https://github.com/git-lfs/git-lfs/wiki/Installation).
+
+For example, on MAC OS, you will need to run the following. In addition, you may need to install [Home Brew](https://brew.sh/).
+
+```
+brew update
+brew install git-lfs
+git lfs install
+```
 
 Once you have installed Git Large File Storage, clone the repository by running one of the following in your terminal. We recommend using SSH since that'll allow you to push/pull without authenticating every time.
 
@@ -78,14 +87,13 @@ Here are the technologies used in the project, along with some tutorials if you'
 |------|---------|---------|-----------------|
 | Git | 2.4+ | Version control | [Udacity course](https://classroom.udacity.com/courses/ud775), [good comprehensive online book](https://git-scm.com/book/en/v2) |
 | Postgres | 9.6 | Database | [Tutorial](https://www.postgresql.org/docs/8.0/static/tutorial.html) |
-| SQL | |  Language used for database queries | [Tutorial from Postgres site](https://www.postgresql.org/docs/8.0/static/tutorial-sql.html) |
+| PostgreSQL | |  Language used for database queries | [Tutorial from Postgres site](https://www.postgresql.org/docs/9.6/static/tutorial.html) |
 | Python | v3 | Data Analysis & Webserver | [Anaconda](https://www.continuum.io/downloads), [Python Language Tutorial](https://docs.python.org/3/tutorial/) |
+| Mode Analytics| | Online Application for SQL/Python Reporting and Analyses | [The SQL Tutorial for Data Analysis](https://community.modeanalytics.com/sql/tutorial/introduction-to-sql/)
 | SciPy | | Python packages for data analysis | [Intro to Pandas](http://pandas.pydata.org/pandas-docs/stable/10min.html), [NumPy Tutorial](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html) |
 | Jupyter | | Easily share Python analysis with code and results | [Quickstart guide](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/) |
-| Django | 1.11.4 | Python webserver | Read the tutorial [here](https://docs.djangoproject.com/en/1.11/intro/), but install using `conda install django` |
-| Javascript | ES2015 / ES6 | Clientside scripting language | [Tutorial covering modern JS](https://javascript.info/), [Quick reference of ES6 features](http://es6-features.org/) |
-| Redux | 3.7.2 | Clientside state management | [Docs](http://redux.js.org/), [Good introductory videos](https://egghead.io/courses/getting-started-with-redux) |
-| jQuery | 3.2.1 | Clientside DOM manipulation | [Tutorial](https://www.tutorialspoint.com/jquery/jquery-overview.htm) |
+
+As we move forward with the project, we will undoubtedly add Front End technologies as well. Add these in later!
 
 | Previous | Next |
 |:---------|-----:|

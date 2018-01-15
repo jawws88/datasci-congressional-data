@@ -22,7 +22,7 @@ pg_dump -d postgres --host=hostname --username=username --port=5432 > pg_dump_ou
 In our case, it will look like:
 
 ```
-pg_dump -d postgres --host=c4sf-sba.postgres.database.azure.com --username=datascisba@c4sf-sba --port=5432 > pg_dump_output.sql
+pg_dump -d postgres --host=c4sf-sba.postgres.database.azure.com --username=datascicongressionaldata@c4sf-sba --port=5432 > pg_dump_output.sql
 ```
 
 You will then be prompted for the password. If you need the appropriate DB creds, please message us on Slack!
@@ -62,7 +62,7 @@ pg_dump -V
 This might not actually update the default version of `pg_dump`. What this does is that it installs the updated version of postgresql (in this case 9.6). So if you look for the versions of `pg_dump` using:
 
 ```
-(datasci-sba) vla@DESKTOP-5P8QQKP /mnt/c/Users/vla/git/datasci-sba (master) $ find / -name pg_dump -type f 2>/dev/null
+(datasci-congressional-data) vla@DESKTOP-5P8QQKP /mnt/c/Users/vla/git/datasci-congressional-data (master) $ find / -name pg_dump -type f 2>/dev/null
 /usr/lib/postgresql/9.5/bin/pg_dump
 /usr/lib/postgresql/9.6/bin/pg_dump
 ```
