@@ -29,6 +29,8 @@ In this section, we'll document other people's works around campaign finance tha
 1. Predicting US Federal Campaign Contributions using Demographic Data at the Zip code level: https://github.com/tejeffers/MoneyTalks
 2. 2015 Code for San Francisco Campaign Finance Blog: http://codeforsanfrancisco.org/blog/post/April-12-2015-Campaign-Finance-Summit
 3. Explore Campaign Finance: http://www.explorecampaignfinance.com/. Website for visualizing campaign finance contributions for federal level politicians.
+4. The Influence of Campaign Contributions on the Legislative Process: https://scholarship.law.duke.edu/cgi/viewcontent.cgi?article=1088&context=djclpp. (Academic Paper)
+5. Financing Direct Democracy: Revisiting the Research on Campaign Spending and Citizen Initiatives: http://www.nber.org/papers/w16356 (Academic Paper)
 
 
 ### Notes
