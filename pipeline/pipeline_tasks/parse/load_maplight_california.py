@@ -69,6 +69,11 @@ def load_datasets(dbm, direc):
         'Position': 'position',
     }
 
+    dtype_map = {
+        'recipient_candidate_district': sa.types.String,
+        'recipient_candidate_office': sa.types.String,
+    }
+
     # Reading and Writing Candidate Files
     dfs = []
     for f in cand_files:
@@ -82,7 +87,8 @@ def load_datasets(dbm, direc):
     dbm.write_df_table(
         df,
         table_name='maplight__california_candidate',
-        schema='data_ingest')
+        schema='data_ingest',
+        dtype=dtype_map)
 
     # Reading and Writing Other Files
     dfs = []

@@ -93,6 +93,17 @@ There are at least two main ways to query tables in our database.
 
 See https://github.com/sfbrigade/datasci-congressional-data/blob/master/notebooks/query_sql_template.ipynb as an example to query tables in the database
 
+## Working with Git LFS
+As part of the [Development Environment](./02_development_environment.md), you probably installed Git LFS which is an open source tool that allows us to put large files in Git. Without going too much into detail, Git LFS replaces large files with text pointers inside Git while storing the file contents in a remote server. This is great for day-to-day use as it keeps the size of the repo small. However, what if you actually need to work with the source CSV data files?
+
+To get the CSV files back, all you need to do is type
+
+```
+git lfs pull
+```
+
+And this will re-download all the CSV files appropriately. 
+
 ## Educational Resources
 
 - Git/GitHub - Free online course at Udacity: https://classroom.udacity.com/courses/ud775
