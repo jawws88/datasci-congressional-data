@@ -1,4 +1,4 @@
-# Election Results Data from California Secretary of State
+# Local Election Results Data from California Secretary of State and Institute for Social Research
 
 In this folder we store Election Results Data sourced from the California Institute for Social Research (ISR): http://www.csus.edu/isr/projects/ceda.html. The California Elections Data Archive (CEDA) is a joint project of the Center for California Studies, the ISR and the Office of the California Secretary of State.
 

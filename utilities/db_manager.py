@@ -4,8 +4,20 @@ import urllib.parse
 import pandas as pd
 import psycopg2 as ps
 import sqlalchemy as sa
+from pandas.io.sql import SQLTable
 
 from utilities.util_functions import df_to_sql
+
+
+def _execute_insert(self, conn, keys, data_iter):
+    """Optional, but useful: helps Pandas write tables against Postgres much faster.
+    See https://github.com/pydata/pandas/issues/8953 for more info
+    """
+    print("Using monkey-patched _execute_insert")
+    data = [dict((k, v) for k, v in zip(keys, row)) for row in data_iter]
+    conn.execute(self.insert_statement().values(data))
+
+SQLTable._execute_insert = _execute_insert
 
 
 class DBManager(object):
@@ -50,16 +62,34 @@ class DBManager(object):
             cur = conn.cursor()
             cur.execute(query)
 
-    def write_df_table(self, df, table_name, schema, dtype=None, if_exists='replace', index=False):
-        """Writes Pandas Dataframe to Table in DB"""
+    def write_df_table(self, df, table_name, schema, dtype=None, if_exists='replace', index=False, use_fast=True):
+        """
+        Writes Pandas Dataframe to Table in DB
+
+        Keyword Args:
+            user_fast: A parameter whether to use a "faster" write from Pandas to SQL. Usually, this should be set to
+                       True. In some cases, there are currently some bugs with writing if columns contain commas.
+                       In that case, set to False, and will use the regular Pandas write to SQL (with a monkey-patch)
+        """
         self.create_schema(schema=schema)
 
-        with self.engine.begin() as conn:
-            df_to_sql(db_conn=conn,
-                      df=df,
-                      table_name=table_name,
-                      schema=schema,
-                      required_type_map=dtype,
-                      if_exists=if_exists,
-                      use_index=index,
-                      chunksize=None)
+        if use_fast:
+            with self.engine.begin() as conn:
+                df_to_sql(db_conn=conn,
+                          df=df,
+                          table_name=table_name,
+                          schema=schema,
+                          required_type_map=dtype,
+                          if_exists=if_exists,
+                          use_index=index,
+                          chunksize=None)
+        else:   
+            with self.engine.begin() as conn:
+                df.to_sql(name=table_name,
+                          con=conn,
+                          schema=schema,
+                          dtype=dtype,
+                          if_exists=if_exists,
+                          index=index,
+                          chunksize=10000
+                         )
