@@ -57,6 +57,8 @@ Please go to the [Onboarding](./onboarding) docs to start contributing to this p
 | 01/10/2018 - 01/16/2018 | Erik Eldridge  | @erikeldridge |
 | 01/17/2018 - 01/23/2018 | Vincent La     | @vincela14 |
 | 01/24/2018 - 01/30/2018 | Vincent La     | @vincela14 |
+| 01/31/2018 - 02/06/2018 | Vincent La     | @vincela14 |
+| 02/07/2018 - 02/13/2018 | Vincent La     | @vincela14 |
 | FUTURE DATE | YOUR NAME     | YOUR SLACK HANDLE |
 
 #### Other Members:
