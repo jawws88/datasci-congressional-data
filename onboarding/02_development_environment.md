@@ -62,7 +62,7 @@ git clone git@github.com:sfbrigade/datasci-congressional-data.git
 ```
 
 ## Connecting to our database
-In your ~/.bash_profile you need to set up environment variables corresponding to the database credentials. Slack the #university group for the appropriate credentials
+In your ~/.bash_profile you need to set up environment variables corresponding to the database credentials. Slack the #datasci-congressdata group for the appropriate credentials
 
 The following below aren't absolutely necessary, but are pretty helpful.
 

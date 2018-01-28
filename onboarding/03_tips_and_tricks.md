@@ -23,10 +23,16 @@ For editing code, feel free to use whatever text editor you are comfortable with
 
 If you don't have an already preferred text editor, we recommend using [Sublime Text 3](https://www.sublimetext.com/3). You can download it for free with an "unlimited" trial period.
 
-Once you've downloaded Sublime Text 3, it's usually helpful to be able to open Sublime Text 3 from the command line. This allows you to edit files much easier. To do this, add the following line to your `~/.bash_profile`:
+Once you've downloaded Sublime Text 3, it's usually helpful to be able to open Sublime Text 3 from the command line. This allows you to edit files much easier. To do this, add the following line to your `~/.bash_profile` (for Mac):
 
 ```
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+```
+
+For Windows/Ubuntu (Assuming you set up Bash on Ubuntu for Windows), you can do (this would be for the default installation location, yours may be different):
+
+```
+alias subl='"/mnt/c/Program Files/Sublime Text 3/subl.exe"'
 ```
 
 Then, to open a text file using Sublime from the command line, you can do:
