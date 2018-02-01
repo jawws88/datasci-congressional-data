@@ -34,7 +34,7 @@ brew install git-lfs
 git lfs install
 ```
 
-Once you have installed Git Large File Storage, clone the repository by running one of the following in your terminal. We recommend using SSH since that'll allow you to push/pull without authenticating every time.
+Once you have installed Git Large File Storage, clone the repository by running one of the following in your terminal. We recommend using SSH since that'll allow you to push/pull without authenticating every time. If you don't already have your SSH keys set up see the instructions [here](https://help.github.com/articles/connecting-to-github-with-ssh/).
 
 ```
 # If using HTTPS
