@@ -21,23 +21,6 @@ https://www.continuum.io/downloads
 
 You should download the Python 3 version.
 
-## Setting Up Python Environment
-Once you've installed Anaconda's distribution of Python, to clone and activate the appropriate python environment:
-
-1. First `cd` into the root directory
-2. `conda env create -f environment.yml`
-    1. This clones the appropriate python environment which should be named `datasci-congressional-data`.
-    2. See https://conda.io/docs/using/envs.html#use-environment-from-file for more information.
-3. `source activate datasci-congressional-data`
-    1. This activates the conda python environment
-    2. **Note you will need to activate the python environment every time you open a new terminal window** 
-4. `conda env update -f environment.yml`
-    1. In the future, if you need to update your environment run the above command.
-
-For further information, here is a useful guide to conda environments: https://conda.io/docs/using/envs.html.
-
-Note, the [environment.yml](../environment.yml) file must be kept up to date and is how we will ensure that every group member is on the same environment so any work we do on any machine is reproducible on any other machine.
-
 ## Clone the Repository
 Before cloning the repository, we recommend you install Git Large File Storage. [Git Large File Storage](https://git-lfs.github.com/) is an open source Git extension for versioning large files. This can be a useful tool for storing large files using Git. This will be useful since we will be storing somewhat large source data files in our repository.
 
@@ -60,6 +43,23 @@ git clone https://github.com/sfbrigade/datasci-congressional-data.git
 # If using SSH
 git clone git@github.com:sfbrigade/datasci-congressional-data.git
 ```
+
+## Setting Up Python Environment
+Once you've installed Anaconda's distribution of Python, to clone and activate the appropriate python environment:
+
+1. First `cd` into the root directory
+2. `conda env create -f environment.yml`
+    1. This clones the appropriate python environment which should be named `datasci-congressional-data`.
+    2. See https://conda.io/docs/using/envs.html#use-environment-from-file for more information.
+3. `source activate datasci-congressional-data`
+    1. This activates the conda python environment
+    2. **Note you will need to activate the python environment every time you open a new terminal window** 
+4. `conda env update -f environment.yml`
+    1. In the future, if you need to update your environment run the above command.
+
+For further information, here is a useful guide to conda environments: https://conda.io/docs/using/envs.html.
+
+Note, the [environment.yml](../environment.yml) file must be kept up to date and is how we will ensure that every group member is on the same environment so any work we do on any machine is reproducible on any other machine.
 
 ## Connecting to our database
 In your ~/.bash_profile you need to set up environment variables corresponding to the database credentials. Slack the #datasci-congressdata group for the appropriate credentials
