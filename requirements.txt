@@ -1,0 +1,5 @@
+sqlalchemy>=1.2.1
+psycopg2>=2.7.3.2
+jupyter>=1.0.0
+pandas>=0.22.0
+plotnine>=0.3.0
