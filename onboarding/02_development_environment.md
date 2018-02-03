@@ -21,6 +21,29 @@ https://www.continuum.io/downloads
 
 You should download the Python 3 version.
 
+## Clone the Repository
+Before cloning the repository, we recommend you install Git Large File Storage. [Git Large File Storage](https://git-lfs.github.com/) is an open source Git extension for versioning large files. This can be a useful tool for storing large files using Git. This will be useful since we will be storing somewhat large source data files in our repository.
+
+To install visit their [home page](https://git-lfs.github.com/) and/or view the installation [wiki instructions](https://github.com/git-lfs/git-lfs/wiki/Installation).
+
+For example, on MAC OS, you will need to run the following. In addition, you may need to install [Home Brew](https://brew.sh/).
+
+```
+brew update
+brew install git-lfs
+git lfs install
+```
+
+Once you have installed Git Large File Storage, clone the repository by running one of the following in your terminal. We recommend using SSH since that'll allow you to push/pull without authenticating every time. If you don't already have your SSH keys set up see the instructions [here](https://help.github.com/articles/connecting-to-github-with-ssh/).
+
+```
+# If using HTTPS
+git clone https://github.com/sfbrigade/datasci-congressional-data.git
+
+# If using SSH
+git clone git@github.com:sfbrigade/datasci-congressional-data.git
+```
+
 ## Setting Up Python Environment
 Once you've installed Anaconda's distribution of Python, to clone and activate the appropriate python environment:
 
@@ -38,33 +61,17 @@ For further information, here is a useful guide to conda environments: https://c
 
 Note, the [environment.yml](../environment.yml) file must be kept up to date and is how we will ensure that every group member is on the same environment so any work we do on any machine is reproducible on any other machine.
 
-## Clone the Repository
-Before cloning the repository, we recommend you install Git Large File Storage. [Git Large File Storage](https://git-lfs.github.com/) is an open source Git extension for versioning large files. This can be a useful tool for storing large files using Git. This will be useful since we will be storing somewhat large source data files in our repository.
-
-To install visit their [home page](https://git-lfs.github.com/) and/or view the installation [wiki instructions](https://github.com/git-lfs/git-lfs/wiki/Installation).
-
-For example, on MAC OS, you will need to run the following. In addition, you may need to install [Home Brew](https://brew.sh/).
-
-```
-brew update
-brew install git-lfs
-git lfs install
-```
-
-Once you have installed Git Large File Storage, clone the repository by running one of the following in your terminal. We recommend using SSH since that'll allow you to push/pull without authenticating every time.
-
-```
-# If using HTTPS
-git clone https://github.com/sfbrigade/datasci-congressional-data.git
-
-# If using SSH
-git clone git@github.com:sfbrigade/datasci-congressional-data.git
-```
-
 ## Connecting to our database
 In your ~/.bash_profile you need to set up environment variables corresponding to the database credentials. Slack the #datasci-congressdata group for the appropriate credentials
 
-The following below aren't absolutely necessary, but are pretty helpful.
+### What is a .bash_profile and how do I add to it?
+In short, a `~/.bash_profile` is a "hidden file" that is usually located in your home directory in your Linux environment. (`~` refers to the home directory, e.g. if you do `cd ~` you change directory into your home directory). This file is loaded before the Terminal loads your shell environment and contains all the startup configuration and preferences for your command line interface. For example, you can add environment variables, change the color of texts, and add aliases to functions you use on a frequent basis.
+
+To add a line to your `~/.bash_profile`, you can use any text editor that you are familiar with (e.g. `emacs`, `vim`, `nano`). For those with limited experience working in Linux like environments a few quick Google Searches or asking your group members should work! Alternatively, you can also use something like the following to add directly into your `~/.bash_profile`:
+
+```
+echo "YOUR TEXT HERE" >> ~/.bash_profile
+```
 
 ## Installing Postgres locally
 Installing postgres locally is technically optional, but will be really useful if you want to use `psql` command line tool. 
