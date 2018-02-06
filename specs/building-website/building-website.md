@@ -11,8 +11,8 @@ This project will primarily use **design** and  **software engineering** resourc
 # Dates
 We currently estimate
 
-1. Start Date: January 18, 2018
-2. Estimated End Date: February 18, 2018
+1. Start Date: 2018-02-07
+2. Estimated End Date: 2018-03-21
 3. Actual End Date: 
 
 Note that we will likely be updating the website over time as we get more data, build and improve our data science model, etc. The point of this first iteration (initially estimated to complete by February 18th, 2018) is to set up the initial scaffolding, make decisions on what applications we will use, set up the design of the website, and build it in a modular way that future edits can be made fairly easily.
