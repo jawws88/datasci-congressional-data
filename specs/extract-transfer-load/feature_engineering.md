@@ -26,9 +26,7 @@ At a minimum, we should be able to at least
     2. If organization, can we classify which industry?
     3. Can we classify out-of-state donations?
     4. Can we classify "Small Money" Donors
-2. For election results:
-    1. Can we identify which were "close" elections or a-priori did not have a heavy favorite?
-3. To combine the campaign finance transaction data and election results data we don't have a universal `candidate_id`. Conduct a fuzzy merge based on name to connect the two data sources.
+2. To combine the campaign finance transaction data and election results data we don't have a universal `candidate_id`. Conduct a fuzzy merge based on name to connect the two data sources.
 
 **Beyond MVP**
 Feature Engineering can, in theory, go on indefinitely. With any given data set, we could come up with infinite transformations and derivations to add additional features. The point of this spec is to list the minimum additional features to make our analysis and visualizations more useful.
@@ -39,6 +37,8 @@ That being said, there are potentially useful extensions of the MVP above (and f
     1. While "fuzzy merges" might work for one-off tasks, it would be great if we could think about a more robust solution (perhaps create our own C4SF universal identifier?)
     2. In addition (or alternatively) can we write a task to standardize names?
 2. Are there other meaningful features about the candidate we can pull in? For example, are they independently wealthy? If so, does that mean their sources of funding are more obscure?
+3. For election results:
+    1. Can we identify which were "close" elections or a-priori did not have a heavy favorite?
 
 ## External Citations
 
