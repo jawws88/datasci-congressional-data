@@ -21,7 +21,9 @@ https://www.continuum.io/downloads
 You should download the Python 3 version.
 
 ## Clone the Repository
-Before cloning the repository, we recommend you install Git Large File Storage. [Git Large File Storage](https://git-lfs.github.com/) is an open source Git extension for versioning large files. This can be a useful tool for storing large files using Git. This will be useful since we will be storing somewhat large source data files in our repository.
+Before cloning the repository, as an optional component, you can install Git Large File Storage. [Git Large File Storage](https://git-lfs.github.com/) is an open source Git extension for versioning large files. This can be a useful tool for storing large files using Git and for the time being we will be downloading and storing somewhat large source data files in our repository which we then will upload into our database. However, this is optional, if you won't be working directly with our ETL processing and processing raw files, you don't necessarily need to worry about this part.
+
+### Installing Git Large File Storage (Optional)
 
 To install visit their [home page](https://git-lfs.github.com/) and/or view the installation [wiki instructions](https://github.com/git-lfs/git-lfs/wiki/Installation).
 
@@ -33,7 +35,21 @@ brew install git-lfs
 git lfs install
 ```
 
-Once you have installed Git Large File Storage, clone the repository by running one of the following in your terminal. We recommend using SSH since that'll allow you to push/pull without authenticating every time. If you don't already have your SSH keys set up see the instructions [here](https://help.github.com/articles/connecting-to-github-with-ssh/).
+### Back to Cloning the Repository
+
+Once you have installed Git Large File Storage (or even if you decided not to), clone the repository. 
+
+By cloning the repository, you are creating a directory local on your machine that will be titled "datasci-congressional-data" (the same name as the reposistory). It's up to you where you want to put this directory, but personally I have created a direcotry named "git" in my home directory and store all my git repository directories within that "git" directory. If you wanted to do this then you can do:
+
+```
+# If using Mac
+mkdir ~/git
+
+# If using Windows/Ubuntu
+mkdir /mnt/c/Users/USERNAME/git
+```
+
+Then, inside that "git" directory, clone the repo by running one of the following commands. We recommend using SSH since that'll allow you to push/pull without authenticating every time. If you don't already have your SSH keys set up see the instructions [here](https://help.github.com/articles/connecting-to-github-with-ssh/). However, if you don't want to do that cloning via HTTPS will be "easier" (no additional setup required), but each time you push to the repository you will have to re-enter your GitHub credentials (a minor annoyance).
 
 ```
 # If using HTTPS
