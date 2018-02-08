@@ -11,5 +11,6 @@ dependencies:
     - gitpython==2.1.8
     - xlrd==1.1.0
     - pandas==0.22.0
+    - plotnine==0.3.0
 prefix: /home/vla/anaconda3/envs/datasci-congressional-data
 
