@@ -121,7 +121,7 @@ alias datascicongressionaldatadbwpass='psql "DB CREDS"'
 
 Instead of 'DB CREDS' above you should have the actual DB creds which are private, so if you don't have access to those you should ping the #datasci-congressdata Slack channel **and make sure you don't upload them to a public place like GitHub!!**. 
 
-###Testing Postgres Installation
+### Testing Postgres Installation
 
 1. Close your current terminal window (just to start fresh) and reopen a new terminal window.
 2. `cd` into the GitHub repository.
