@@ -166,7 +166,7 @@ def draw_cv_roc_curve(classifier, cv, X, y):
     plt.show()
 
 
-def plot_precision_recall_curve(model, y_test, X_test):
+def plot_precision_recall_curve(model, X_test, y_test):
     """Plot precision-recall curve. Shows plot."""
     preds = model.predict_proba(X_test)[:, 1]  # Get Prob Estimates of the positive class
     exp = y_test
