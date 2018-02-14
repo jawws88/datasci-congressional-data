@@ -93,6 +93,8 @@ echo "YOUR TEXT HERE" >> ~/.bash_profile
 ### For Mac
 The easy way to install Postgres locally if you have a Mac is to use Postgres.app: https://postgresapp.com and just click the download button.
 
+Be sure to restart your terminal before testing `psql` command.
+
 ### For Windows/Ubuntu
 Installing Postgres via Windows/Ubuntu is a bit harder. The instructions below are actually sourced from this [blog post](https://medium.com/@colinrubbert/installing-ruby-on-rails-in-windows-10-w-bash-postgresql-e48e55954fbf).
 
