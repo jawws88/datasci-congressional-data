@@ -246,6 +246,7 @@ Here are the technologies used in the project, along with some tutorials if you'
 | Mode Analytics| | Online Application for SQL/Python Reporting and Analyses | [The SQL Tutorial for Data Analysis](https://community.modeanalytics.com/sql/tutorial/introduction-to-sql/)
 | SciPy | | Python packages for data analysis | [Intro to Pandas](http://pandas.pydata.org/pandas-docs/stable/10min.html), [NumPy Tutorial](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html) |
 | Jupyter | | Easily share Python analysis with code and results | [Quickstart guide](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/) |
+| Django | 2.0 | Web server | [Tutorial](https://docs.djangoproject.com/en/2.0/intro/tutorial01/) |
 
 As we move forward with the project, we will undoubtedly add Front End technologies as well. Add these in later!
 
