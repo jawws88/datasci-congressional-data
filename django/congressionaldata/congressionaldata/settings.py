@@ -11,6 +11,15 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import urllib.parse
+
+# Read DB URI From Environment Variable
+CD_DWH = os.getenv('CD_DWH')
+PARSED_DBURI = urllib.parse.urlparse(CD_DWH)
+
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -74,9 +83,18 @@ WSGI_APPLICATION = 'congressionaldata.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
+    # Ask on slack for credentials
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': PARSED_DBURI.path[1:],
+        'USER': PARSED_DBURI.username,
+        'PASSWORD': PARSED_DBURI.password,
+        'HOST': PARSED_DBURI.hostname,
+        'PORT': '5432',
+        'OPTIONS': {
+            'options': '-c search_path=stg_analytics,trg_analytics',
+            'sslmode': 'require',
+        }
     }
 }
 
