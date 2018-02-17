@@ -2,6 +2,7 @@ from django.db import models
 
 # the following models were created by running:
 # python manage.py inspectdb
+# except for comments inline
 
 
 class CandidateContributions(models.Model):
@@ -11,7 +12,8 @@ class CandidateContributions(models.Model):
     election = models.DateField(blank=True, null=True)
     primary_general_indicator = models.IntegerField(blank=True, null=True)
     transaction_date = models.DateField(blank=True, null=True)
-    transaction_amount = models.DecimalField(max_digits=65535, decimal_places=65535, blank=True, null=True)
+    # note needed to change decimal_places from 65535 to 2 otherwise DRF raised an invalid decimal operation error
+    transaction_amount = models.DecimalField(max_digits=65535, decimal_places=2, blank=True, null=True)
     filed_date = models.DateField(blank=True, null=True)
     recipient_committee_name = models.TextField(blank=True, null=True)
     recipient_candidate_name = models.TextField(blank=True, null=True)
