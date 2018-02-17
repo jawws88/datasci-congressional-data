@@ -1,7 +1,9 @@
 name: datasci-congressional-data
 channels:
+- conda-forge
 - defaults
 dependencies:
+  - django=2.0.2=py36_0
   - python=3.6.0
   - numpy=1.13.1
   - psycopg2=2.7.1
