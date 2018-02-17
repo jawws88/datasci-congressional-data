@@ -48,7 +48,8 @@ class StgCandidateContributions(models.Model):
     primary_general_indicator = models.IntegerField(blank=True, null=True)
     transaction_id = models.TextField(blank=True, null=True)
     transaction_date = models.DateField(blank=True, null=True)
-    transaction_amount = models.DecimalField(max_digits=65535, decimal_places=65535, blank=True, null=True)
+    # note needed to change decimal_places from 65535 to 2 otherwise DRF raised an invalid decimal operation error
+    transaction_amount = models.DecimalField(max_digits=65535, decimal_places=2, blank=True, null=True)
     filed_date = models.DateField(blank=True, null=True)
     recipient_committee_name = models.TextField(blank=True, null=True)
     recipient_candidate_name = models.TextField(blank=True, null=True)
@@ -103,7 +104,8 @@ class StgCandidateElectionResults(models.Model):
     number_votes_for_candidate = models.IntegerField(blank=True, null=True)
     total_votes_for_all_candidates = models.IntegerField(blank=True, null=True)
     rank_order_of_candidates = models.IntegerField(blank=True, null=True)
-    percent_of_votes_received_by_candidate = models.DecimalField(max_digits=65535, decimal_places=65535, blank=True, null=True)
+    # note needed to change decimal_places from 65535 to 5 otherwise DRF raised an invalid decimal operation error
+    percent_of_votes_received_by_candidate = models.DecimalField(max_digits=65535, decimal_places=5, blank=True, null=True)
     candidate_election_outcome = models.IntegerField(blank=True, null=True)
     candidate_election_outcome_description = models.TextField(blank=True, null=True)
     mult_county_number_votes_for_candidate = models.IntegerField(blank=True, null=True)
