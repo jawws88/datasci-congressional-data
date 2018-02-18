@@ -29,10 +29,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'l&d$l8=3#^o0g1hh1b%#%r+)ap-)mdz9m$j^$2=k247ajpr8ie'
+SECRET_KEY = os.getenv('CD_SECRET_KEY', 'l&d$l8=3#^o0g1hh1b%#%r+)ap-)mdz9m$j^$2=k247ajpr8ie')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(os.getenv('CD_DEBUG', 'True'))
 
 ALLOWED_HOSTS = []
 
@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'congressionaldata.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    # Ask on slack for credentials
+    # Slack the #datasci-congressdata group for the appropriate credential
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': PARSED_DBURI.path[1:],

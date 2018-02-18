@@ -5,7 +5,7 @@
 The Django project resides in the [django/congressionaldata](../django/congressionaldata) folder of the repository.  It contains two Django apps:
 
 * [api](../django/congressionaldata/api) is a JSON API server, which has mappings for the database tables in [models.py](../django/congressionaldata/api/models.py) and uses the Django Rest Framework to power the API (see [views.py](../django/congressionaldata/api/views.py) and [serializers.py](../django/congressionaldata/api/serializers.py)).
-* [webapp](../django/congressionaldata/webapp) is a static webapp that pulls data from the API server and renders a visualization.  It doesn't have any backend models, just a simple [view](../django/congressionaldata/webapp/views.py) and [HTML page](../django/congressionaldata/webapp/templates/webapp/index.html) and soon there'll be a lot af JavaScript.
+* [webapp](../django/congressionaldata/webapp) is a static webapp that pulls data from the API server and renders a visualization.  It doesn't have any backend models, just a simple [view](../django/congressionaldata/webapp/views.py) and [HTML page](../django/congressionaldata/webapp/templates/webapp/index.html) and soon there'll be a lot of JavaScript.
 
 ## Tutorials
 
