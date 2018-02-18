@@ -9,5 +9,4 @@ router.register(r'candidate_contributions', views.CandidateContributionsViewSet,
 
 urlpatterns = [
     path('models/', include(router.urls)),
-    path('', views.index, name='index'),
 ]

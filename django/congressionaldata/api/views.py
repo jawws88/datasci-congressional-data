@@ -9,10 +9,6 @@ from api.models import CandidateContributions
 from api.serializers import CandidateContributionSerializer
 
 
-def index(request):
-    return HttpResponse("Hello, world.")
-
-
 class CandidateContributionsViewSet(viewsets.ModelViewSet):
 
     serializer_class = CandidateContributionSerializer
