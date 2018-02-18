@@ -50,8 +50,8 @@ def process_contest(rows, election_name, contest_name):
     # Create a Dictionary mapping
     #   1. Votes Column to Candidate
     #   2. Candidate to Party  
-    candidate1 = rows[0][1].value
-    candidate2 = rows[0][2].value
+    candidate1 = ' '.join(rows[0][1].value.split())
+    candidate2 = ' '.join(rows[0][2].value.split())
     party1 = rows[1][1].value
     party2 = rows[1][2].value
 
@@ -70,7 +70,9 @@ def process_contest(rows, election_name, contest_name):
     votes1 = []
     votes2 = []
     for r in range(len(rows)):
-        if(re.search('percent', rows[r][0].value, re.IGNORECASE) or rows[r][0].value == ''):
+        contains_percent = re.search('percent', rows[r][0].value, re.IGNORECASE)
+        contains_continued = re.search('continued', rows[r][0].value, re.IGNORECASE)
+        if(contains_percent or rows[r][0].value == '' or contains_continued):
             pass
         else:
             counties.append(rows[r][0].value)
@@ -129,7 +131,8 @@ def get_district_metadata(rows):
     for r in range(len(rows)):
         contains_district = re.search('district', rows[r][0].value, re.IGNORECASE)
         contains_totals = re.search('totals', rows[r][0].value, re.IGNORECASE)
-        if(contains_district and not(contains_totals)):
+        contains_continued = re.search('continued', rows[r][0].value, re.IGNORECASE)
+        if(contains_district and not(contains_totals) and not(contains_continued)):
             contest_name_idx.append(r)
         if(contains_totals):
             total_votes_idx.append(r)
