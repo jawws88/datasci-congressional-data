@@ -18,9 +18,32 @@ import re
 
 import pandas as pd
 import sqlalchemy as sa
+import xlrd
+import xlwt
 
+from pipeline.pipeline_tasks.parse.casos_data_utils import process_contest, get_district_metadata
 from utilities.db_manager import DBManager
 from utilities import util_functions as uf
+
+
+# Hacky Implementation: Defining Globally the Statewide vs District Elections
+STATEWIDE_ELECTIONS = [
+    '19-governor.xls',
+    '22-lieutenant-governor.xls',
+    '25-secretary-of-state (1).xls',
+    '28-controller.xls',
+    '31-treasurer.xls',
+    '34-attorney-general.xls',
+    '37-insurance-commissioner.xls',
+    '85-superintendent-of-public-instruction.xls',
+]
+
+DISTRICT_ELECTIONS = [
+    '40-board-of-equalization.xls',
+    '43-congress.xls',
+    '58-state-senator.xls',
+    '64-state-assemblymember.xls', 
+]
 
 
 def get_args():
@@ -36,9 +59,42 @@ def clean_datasets(dbm, direc):
 
     Keyword Args:
         dbm: DBManager object
-        dir: Directory where files are
+        direc: Directory where files are
     """
-    pass
+    year = '2014'
+    dir_files = os.listdir(os.path.join(direc, year))
+    dir_files = [f for f in dir_files if f.endswith('.xls')]
+
+    # Hard Code Election Name for now as the Year + 'General'
+    election_name = '{} General'.format(year)
+
+    # Create Results List where each element will be a DataFrame of Contest Results
+    results = []
+    for filename in dir_files:
+        file = os.path.join(direc, year, filename)
+        workbook = xlrd.open_workbook(file)
+        worksheet = workbook.sheet_by_index(0)  # By Default usually there's only one sheet. This is Hacky. How to be robust?
+        rows = [worksheet.row(r) for r in range(worksheet.nrows)]
+
+        if(filename in STATEWIDE_ELECTIONS):
+            # Extract Contest Name from Filename
+            # Reg Exp: https://stackoverflow.com/questions/8199398/extracting-only-characters-from-a-string-in-python
+            contest_name = re.findall(r"(?i)\b[a-z]+\b", filename)[0]
+            contest_rows = rows
+            contest_results = process_contest(rows=contest_rows, election_name=election_name, contest_name=contest_name)
+            results.append(contest_results)
+        elif(filename in DISTRICT_ELECTIONS):
+            # For District Elections:
+            district_metadata = get_district_metadata(rows)
+            for key in district_metadata:
+                contest_name = district_metadata[key]['contest_name']
+                starting_idx = district_metadata[key]['row_indices'][0]
+                ending_idx = district_metadata[key]['row_indices'][1]
+                contest_rows = rows[starting_idx:ending_idx]
+                contest_results = process_contest(rows=contest_rows, election_name=election_name, contest_name=contest_name)
+                results.append(contest_results)
+    df = pd.concat(results, ignore_index=True)
+    df.to_excel(os.path.join(direc, 'csv-candidates-2014.xls'), index=False)
 
 
 def main():
