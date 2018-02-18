@@ -30,7 +30,7 @@ A few notes:
 
 ## Running the webapp locally
 
-1. Make sure your anaconda environment is activated, as described [here](02_developmen_environment.md#testing-python-installation)
+1. Make sure your anaconda environment is activated, as described [here](02_development_environment.md#testing-python-installation)
 2. Run the `export CD_DWH` command described [here](02_development_environment.md#verifying-your-development-environment)
 3. From the `django/congressionaldata` folder, run `python manage.py runserver`
 4. You should see output like this if everything went well:
