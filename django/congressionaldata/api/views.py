@@ -9,7 +9,7 @@ from api.models import CandidateContributions
 from api.serializers import CandidateContributionSerializer
 
 
-class CandidateContributionsViewSet(viewsets.ModelViewSet):
+class CandidateContributionsViewSet(viewsets.ReadOnlyModelViewSet):
 
     serializer_class = CandidateContributionSerializer
 
