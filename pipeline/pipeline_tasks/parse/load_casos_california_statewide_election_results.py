@@ -17,6 +17,19 @@ from utilities.db_manager import DBManager
 from utilities import util_functions as uf
 
 
+# The only columns we care about
+COLS = [
+    'election_name',
+    'county_name',
+    'contest_name',
+    'candidate_name',
+    'incumbent_flag',
+    'party_name',
+    'vote_total',
+]
+
+
+
 def get_args():
     """Use argparse to parse command line arguments."""
     parser = argparse.ArgumentParser(description='Runner for tasks')
@@ -57,6 +70,7 @@ def load_datasets(dbm, direc):
         print('Reading file {} into pandas.'.format(f))
         df = pd.read_excel(os.path.join(direc, f))
         df.rename(index=str, columns=column_map_cand, inplace=True)
+        df = df[COLS]
         dfs.append(df)
 
     print('Writing candidate election results into database.')

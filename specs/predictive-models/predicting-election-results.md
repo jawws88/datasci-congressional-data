@@ -8,8 +8,8 @@ This will require primarily data science resources (although open to anyone inte
 
 ## Dates
 
-1. Start Date: 2018-01-24
-2. Estimated End Date: 2018-03-07
+1. Start Date: 2018-02-21
+2. Estimated End Date: 2018-03-14
 3. Actual End Date:
 
 ## Background and Significance (why are we doing this?)
