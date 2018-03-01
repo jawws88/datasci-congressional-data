@@ -8,10 +8,10 @@ function safeJSONParse(JSONstring) {
     let data;
     try {
         data = JSON.parse(JSONstring);
-    } catch (err) {
-        return { error: err, data };
+    } catch (error) {
+        return { error };
     }
-    return { error: null, data };
+    return { data };
 }
 
 module.exports = safeJSONParse;
