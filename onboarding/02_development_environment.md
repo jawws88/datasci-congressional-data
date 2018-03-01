@@ -78,7 +78,7 @@ git clone git@github.com:sfbrigade/datasci-congressional-data.git
 ## Setting Up Python Environment
 Once you've installed Anaconda's distribution of Python, to clone and activate the appropriate python environment:
 
-1. First `cd` into the root directory
+1. First, make sure in your terminal you are in the root directory of this git repository.
 2. `conda env create -f environment.yml`
     1. This clones the appropriate python environment which should be named `datasci-congressional-data`.
     2. See https://conda.io/docs/using/envs.html#use-environment-from-file for more information.
