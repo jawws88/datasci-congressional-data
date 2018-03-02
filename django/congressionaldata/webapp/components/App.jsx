@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import request from 'superagent';
-import { Alert } from 'react-bootstrap/lib';
+import { Row, Grid, Alert } from 'react-bootstrap/lib';
 
-import safeJSONParse from '../util/safeJSONParse';
 import BarChart from './charts/BarChart.jsx';
-import mockData from '../mock/data.json';
+import FundingSources from './FundingSources.jsx';
+import getData from '../api/getData';
 
 /**
  * The toplevel application component to render as the root node.
@@ -13,24 +12,6 @@ class App extends Component {
     state = {
         error: null,
         data: null,
-    }
-
-    /**
-     * Get the data from the API endpoint.
-     * @param {Function} cb - The callback to call.
-     */
-    getData = (cb) => {
-        request.get('http://localhost:8000/api/models/candidate_contributions/')
-        .end((err, res) => {
-            if (err) {
-                return cb(err);
-            }
-            const { error, data } = safeJSONParse(res.text);
-            if (error) {
-                return cb(error);
-            }
-            cb(null, data);
-        });
     }
 
     /**
@@ -55,25 +36,28 @@ class App extends Component {
     }
 
     componentWillMount() {
-        this.getData((error, data) => this.setState({ error, data }));
+        getData('api/models/candidate_contributions/', (error, data) =>
+            this.setState({ error, data }));
     }
 
     render() {
         return (
             <div>
                 <h1>Congressional Data</h1>
-                <BarChart data={mockData}
-                    width={600}
-                    height={450}
-                    barColor='steelBlue'
-                />
-                <div className="contribution-list">
-                <p>
-                    Below are some candidate contributions loaded from the API
-                    server. Now let's visualize them!
-                </p>
-                    {this.getContributions()}
-                </div>
+                <Grid>
+                    <Row>
+                        <FundingSources />
+                    </Row>
+                    <Row>
+                        <div className="contribution-list">
+                        <p>
+                            Below are some candidate contributions loaded from
+                            the API server. Now let's visualize them!
+                        </p>
+                            {this.getContributions()}
+                        </div>
+                    </Row>
+                </Grid>
             </div>
         )
     }

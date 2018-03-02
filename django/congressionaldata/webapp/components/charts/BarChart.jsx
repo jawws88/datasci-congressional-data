@@ -7,12 +7,17 @@ import { axisBottom, axisLeft } from 'd3-axis'
 class BarChart extends Component {
 
     componentDidMount() {
-        this.createChart()
+        this.createChart();
+    }
+
+    componentDidUpdate() {
+        select(this.svg).selectAll('g').remove(); // Refresh the chart.
+        this.createChart();
     }
 
     createChart = () => {
-        const { width, height, barColor, data } = this.props;
-        const margin = {top: 20, right: 0, bottom: 110, left: 40};
+        const { width, height, xKey, yKey, barColor, data } = this.props;
+        const margin = {top: 20, right: 0, bottom: 300, left: 80};
 
         const x = scaleBand()
             .range([margin.left, width - margin.right])
@@ -21,8 +26,8 @@ class BarChart extends Component {
         const y = scaleLinear()
             .range([height - margin.bottom, margin.top])
 
-        x.domain(data.map(d => d.candidate));
-        y.domain([0, max(data, d => +d.frequency)]).nice();
+        x.domain(data.map(d => d[xKey]));
+        y.domain([0, max(data, d => +d[yKey])]).nice();
 
         // Append initial group element using a reference to the svg DOM node.
         const g = select(this.svg).append('g');
@@ -46,10 +51,10 @@ class BarChart extends Component {
             .data(data)
             .enter().append('rect')
                 .attr('fill', barColor)
-                .attr('x', d => x(d.candidate))
-                .attr('y', d => y(d.frequency))
+                .attr('x', d => x(d[xKey]))
+                .attr('y', d => y(d[yKey]))
                 .attr('width', x.bandwidth())
-                .attr('height', d => height - margin.bottom - y(d.frequency));
+                .attr('height', d => height - margin.bottom - y(d[yKey]));
     }
 
     render() {
