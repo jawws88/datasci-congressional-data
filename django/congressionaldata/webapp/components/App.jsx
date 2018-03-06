@@ -3,6 +3,8 @@ import request from 'superagent';
 import { Alert } from 'react-bootstrap/lib';
 
 import safeJSONParse from '../util/safeJSONParse';
+import BarChart from './charts/BarChart.jsx';
+import mockData from '../mock/data.json';
 
 /**
  * The toplevel application component to render as the root node.
@@ -60,6 +62,11 @@ class App extends Component {
         return (
             <div>
                 <h1>Congressional Data</h1>
+                <BarChart data={mockData}
+                    width={600}
+                    height={450}
+                    barColor='steelBlue'
+                />
                 <div className="contribution-list">
                 <p>
                     Below are some candidate contributions loaded from the API

@@ -5,6 +5,12 @@ The instructions here mostly assume that you are working in a "Linux-like" envir
 
 If you're on a Windows, we highly recommend using [Bash on ubuntu on Windows](https://msdn.microsoft.com/en-us/commandline/wsl/about) which provides a Linux environment without needing to spin up an entire Linux virtual machine! (This will only work on Windows 10, if you're on a earlier version, we highly recommend upgrading to the latest version of Windows 10.) To install, follow the [installation guide](https://docs.microsoft.com/en-us/windows/wsl/install-win10). I also think working in a unix-like environment is great experience, especially in the tech world.
 
+**Setting up Ubuntu on Windows**
+1. Run powershell as Administrator.
+2. In powershell run command: ```Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux```
+3. Download/Install Ubuntu from the [windows store](https://www.microsoft.com/en-us/store/p/ubuntu/9nblggh4msv6?rtc=1) 
+
+**Steps for Environment Setup**
 The following things to be done in order are:
 
 1. Installing Python via Anaconda
@@ -19,6 +25,16 @@ We use Anaconda
 https://www.continuum.io/downloads
 
 You should download the Python 3 version.
+
+In **Windows** you will need to install Anaconda on Ubuntu after downloading:
+1. Type ```pwd``` to view your path. It should be similar to: ``` /home/<username>```
+2. Now type ```cd ../..```, and then ```ls```
+    - You should see: ```bin  boot  dev  etc  home  init  lib  lib64  media  mnt  opt  proc  root  run  sbin  snap  srv  sys  tmp  usr  var```
+3. Now type ```cd mnt/c```
+    - If you do ```ls``` again, you will see the folders/files of your normal windows system.
+4. From there, navigate to the folder that you downloaded Anaconda from.
+5. Now type ```bash Anaconda....sh```
+    - With ```Anaconda....sh``` being the anaconda downloaded file name
 
 ## Clone the Repository
 Before cloning the repository, as an optional component, you can install Git Large File Storage. [Git Large File Storage](https://git-lfs.github.com/) is an open source Git extension for versioning large files. This can be a useful tool for storing large files using Git and for the time being we will be downloading and storing somewhat large source data files in our repository which we then will upload into our database. However, this is optional, if you won't be working directly with our ETL processing and processing raw files, you don't necessarily need to worry about this part.
@@ -62,7 +78,7 @@ git clone git@github.com:sfbrigade/datasci-congressional-data.git
 ## Setting Up Python Environment
 Once you've installed Anaconda's distribution of Python, to clone and activate the appropriate python environment:
 
-1. First `cd` into the root directory
+1. First, make sure in your terminal you are in the root directory of this git repository.
 2. `conda env create -f environment.yml`
     1. This clones the appropriate python environment which should be named `datasci-congressional-data`.
     2. See https://conda.io/docs/using/envs.html#use-environment-from-file for more information.
