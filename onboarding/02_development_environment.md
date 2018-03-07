@@ -92,7 +92,7 @@ For further information, here is a useful guide to conda environments: https://c
 
 Note, the [environment.yml](../environment.yml) file must be kept up to date and is how we will ensure that every group member is on the same environment so any work we do on any machine is reproducible on any other machine.
 
-If you have acitvate your python environment and recieve the following error, you may need to update your python environment:<br>
+If you have acitvated your python environment and recieve the following error, you may need to update your python environment using `conda env update -f environment.yml`as described above:<br>
 ```
 ImportError: Couldn't import Django. 
 Are you sure installed and available on you PYTHONPATH environment variable?
