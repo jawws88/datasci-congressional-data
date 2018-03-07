@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Grid, Alert } from 'react-bootstrap/lib';
 
-import BarChart from './charts/BarChart.jsx';
-import FundingSources from './FundingSources.jsx';
+import FundingSources from './FundingSources';
 import getData from '../api/getData';
 
 /**

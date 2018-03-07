@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Alert } from 'react-bootstrap/lib';
 import Spinner from 'react-spinkit';
 
-import BarChart from './charts/BarChart.jsx';
-import Form from './Form.jsx';
+import BarChart from './charts/BarChart';
+import Form from './Form';
 import getData from '../api/getData';
 
 /**
