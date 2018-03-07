@@ -92,6 +92,13 @@ For further information, here is a useful guide to conda environments: https://c
 
 Note, the [environment.yml](../environment.yml) file must be kept up to date and is how we will ensure that every group member is on the same environment so any work we do on any machine is reproducible on any other machine.
 
+If you have acitvated your python environment and recieve the following error, you may need to update your python environment using `conda env update -f environment.yml`as described above:<br>
+```
+ImportError: Couldn't import Django. 
+Are you sure it's installed and available on you PYTHONPATH environment variable?
+Did you forget to activate a virtual environment?
+```
+
 ## Connecting to our database
 In your `~/.bash_profile` you need to set up environment variables corresponding to the database credentials. Note that if you are using Windows/Ubuntu, you might not have a `~/.bash_profile`, instead you should add the following to your `~/.bashrc` file. Slack the #datasci-congressdata group for the appropriate credentials
 
