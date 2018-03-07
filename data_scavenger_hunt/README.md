@@ -21,3 +21,4 @@ To complete these questions, use the table `trg_analytics.candidate_contribution
 6. In the 2017-2018 election cycle, how many donors comprised of 50% of all donations made?
 7. Repeat (6) for all the other election cycles (currently the dataset includes election cycles starting in 2001). Does the number of donors who comprise of 50% of all donations made within each election cycle change over time?
 8. Explore the data independently and report one additional finding you think is interesting!
+9. What is the total sum of donations that are 'LOANS' in 2017-2018?
