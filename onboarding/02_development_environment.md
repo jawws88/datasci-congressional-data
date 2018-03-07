@@ -95,7 +95,7 @@ Note, the [environment.yml](../environment.yml) file must be kept up to date and
 If you have acitvated your python environment and recieve the following error, you may need to update your python environment using `conda env update -f environment.yml`as described above:<br>
 ```
 ImportError: Couldn't import Django. 
-Are you sure installed and available on you PYTHONPATH environment variable?
+Are you sure it's installed and available on you PYTHONPATH environment variable?
 Did you forget to activate a virtual environment?
 ```
 
