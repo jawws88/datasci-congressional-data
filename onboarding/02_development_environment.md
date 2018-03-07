@@ -153,6 +153,13 @@ export CD_DWH='DB CREDS'
 alias datascicongressionaldatadbwpass='psql "DB CREDS"'
 ```
 
+Execute the content of your file `~/.bash_profile` or `~/.bashrc` to reflect
+your new changes. For example:
+
+```
+source ~/.bash_profile
+```
+
 Instead of 'DB CREDS' above you should have the actual DB creds which are private, so if you don't have access to those you should ping the #datasci-congressdata Slack channel **and make sure you don't upload them to a public place like GitHub!!**. 
 
 ### Testing Postgres Installation
