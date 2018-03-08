@@ -12,4 +12,4 @@ Once you've decided that this is an awesome project with wonderful teammates and
 
 | Previous | Next |
 |:---------|-----:|
-| [Your First Machine Learning Project in Python Step-By-Step](./00_machine_learning_hello_world.md) | [Development Environment](./02_development_environment.md)) |
+| [README](./README.md) | [Development Environment](./02_development_environment.md)) |
