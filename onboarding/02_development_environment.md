@@ -116,6 +116,12 @@ echo "YOUR TEXT HERE" >> ~/.bash_profile
 ### For Mac
 The easy way to install Postgres locally if you have a Mac is to use Postgres.app: https://postgresapp.com and just click the download button.
 
+After installing Postgres.app, you will need to update your PATH. Add the following to your `~/.bash_profile`.
+
+```
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+```
+
 Be sure to restart your terminal before testing `psql` command.
 
 ### For Windows/Ubuntu
