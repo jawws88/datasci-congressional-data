@@ -56,8 +56,9 @@ su - postgres
 
 Last, make sure your pg_hba.conf is set up correctly
 ```bash
-cat /etc/postgresql/9.1/main/pg_hba.conf
+cat /etc/postgresql/<postgres version>/main/pg_hba.conf
 ```
+
 Make sure that the following line appears
 
 ```bash
@@ -65,7 +66,7 @@ Make sure that the following line appears
 local  all      all          md5
 ```
 
-In otherwords, make sure that the database is set to all, the users are set to all, and the method is set to md5 and not peer.
+The default values may be the postgres user for the database and user as well as "peer" for the method. Make sure that the database is set to all, the users are set to all, and the method is set to md5 and not peer.
 
 ##### Mac Users
 
