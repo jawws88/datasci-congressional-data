@@ -10,10 +10,23 @@ This guide will walk you through getting your local environment stood up.
 #### Install Required Dependencies
 In order to stand up a local postgres instance first you have to install several dependencies.
 ##### Linux Users
+
+First log in as the super user so you don't have to sudo everything
 ```bash
-sudo apt-get update
-sudo apt-get install python-pip python-dev libpq-dev postgresql postgresql-contrib
+sudo su
 ```
+
+Next install the following packages
+```bash
+apt-get update
+apt-get install python-pip python-dev libpq-dev postgresql postgresql-contrib
+```
+
+**Optional:** configure a start-up on boot
+```bash
+update-rc.d postgresql enable
+```
+
 ##### Mac Users
 
 ```bash
@@ -25,9 +38,24 @@ brew install python postgresql
 
 coming soon...
 
+if you are using Ubuntu on Windows, please see Linux Users
+
 #### Start Up Local Postgres
 
+##### Linux Users
+
+Start up the service!
+```bash
+service postgresql start
+```
+
+Log in to the postgres user
+```bash
+su - postgres
+```
+
 ##### Mac Users
+
 ```bash
 pg_ctl -D /usr/local/var/postgres start && brew services start postgresql
 ```
