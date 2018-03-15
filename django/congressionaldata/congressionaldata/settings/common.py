@@ -24,10 +24,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('CD_SECRET_KEY', 'l&d$l8=3#^o0g1hh1b%#%r+)ap-)mdz9m$j^$2=k247ajpr8ie')
+#SECRET_KEY = os.getenv('CD_SECRET_KEY', 'l&d$l8=3#^o0g1hh1b%#%r+)ap-)mdz9m$j^$2=k247ajpr8ie')
+SECRET_KEY = 'l&d$l8=3#^o0g1hh1b%#%r+)ap-)mdz9m$j^$2=k247ajpr8ie'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.getenv('CD_DEBUG', 'True'))
+DEBUG = True  # Prod settings turn this off
 
 # Application definition
 
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'webapp',
+    'election_data'
 ]
 
 MIDDLEWARE = [
@@ -110,3 +112,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+try:
+    from secrets.local_settings import *
+except ImportError:
+    pass
