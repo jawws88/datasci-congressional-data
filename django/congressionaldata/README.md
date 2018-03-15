@@ -54,6 +54,19 @@ Log in to the postgres user
 su - postgres
 ```
 
+Last, make sure your pg_hba.conf is set up correctly
+```bash
+cat /etc/postgresql/9.1/main/pg_hba.conf
+```
+Make sure that the following line appears
+
+```bash
+# TYPE DATABASE USER ADDRESS METHOD
+local  all      all          md5
+```
+
+In otherwords, make sure that the database is set to all, the users are set to all, and the method is set to md5 and not peer.
+
 ##### Mac Users
 
 ```bash
