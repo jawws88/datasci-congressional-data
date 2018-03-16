@@ -1,0 +1,9 @@
+--results: 336
+
+select count( sub.re_name) as distinct_re_name_dicccser
+from (
+  select
+    distinct(regexp_replace(lower(split_part(candidate_name, ',', 2) || split_part(candidate_name, ', ', 1)), '[^a-z]', '', 'g') )as re_name
+  from data_ingest.casos__california_candidate_statewide_election_results
+  where county_name = 'State Totals' and contest_name <> 'President' and contest_name <> 'US Senate - 1'
+)sub
