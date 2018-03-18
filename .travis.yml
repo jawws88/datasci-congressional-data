@@ -1,4 +1,4 @@
-language: python
+nguage: python
 virtualenv:
   system_site_packages: true
 python:
@@ -7,6 +7,7 @@ python:
 services: postgresql
 
 before_install:
+  - cd django/congressionaldata
   - export DJANGO_SETTINGS_MODULE=congressionaldata.settings.dev
 
 install:
