@@ -10,7 +10,9 @@ services:
 
 before_install:
   - cd django/congressionaldata
-  - export PYTHONPATH=$PYTHONPATH:$(pwd)
+  - pip install virtualenv
+  - virtualenv venv
+  - source venv/bin/activate
   - export DJANGO_SETTINGS_MODULE=congressionaldata.settings.dev
 
 install:
@@ -19,3 +21,6 @@ install:
 
 script:
   - ./manage.py test
+
+after_script:
+  - deactivate
