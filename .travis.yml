@@ -10,10 +10,12 @@ services:
 
 before_install:
   - cd django/congressionaldata
+  - export PYTHONPATH=$PYTHONPATH:$(pwd)
   - export DJANGO_SETTINGS_MODULE=congressionaldata.settings.dev
 
 install:
   - pip install -r requirements.txt -t lib
+  - pip install coveralls
 
 script:
   - ./manage.py test
