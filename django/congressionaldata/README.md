@@ -1,6 +1,13 @@
-# Congressional Data Django
+# Congressional Data Django [![Build Status](https://travis-ci.org/tramstheman/datasci-congressional-data.svg?branch=master)](https://travis-ci.org/tramstheman/datasci-congressional-data)
 
 Welcome to the Congressional Data Django README file. This is a living breathing document so don't be shy and feel free to contribute documentation!
+
+
+Who are you?
+
+- [Developer](#getting-started)
+- [Techops](#techops)
+- [DevOps](#devops)
 
 ## Getting Started
 This guide will walk you through getting your local environment stood up.
@@ -191,3 +198,8 @@ Follow the steps output by this command.
 1. Reread the docs! You may have missed something.
 2. Run brew doctor and follow all the cleanup steps
 3. Check our IDE configuration
+
+
+## TechOps
+
+## DevOps
