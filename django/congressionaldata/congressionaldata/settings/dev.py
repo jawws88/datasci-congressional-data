@@ -17,7 +17,9 @@ import urllib.parse
 # Read DB URI From Environment Variable
 CD_DWH = os.getenv('CD_DWH')
 
+DEBUG = True
 PARSED_DBURI = urllib.parse.urlparse(CD_DWH)
+print(PARSED_DBURI)
 
 ALLOWED_HOSTS = []
 CORS_ORIGIN_WHITELIST = ('localhost:8080', '127.0.0.1:8080')
