@@ -12,7 +12,7 @@ before_install:
   - virtualenv env -p python3
 
 install:
-  - pip install -r requirements.txt -t lib
+  - pip3 install -r requirements.txt -t lib
 
 script:
-  - python manage.py test
+  - python3 manage.py test
