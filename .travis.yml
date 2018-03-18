@@ -10,7 +10,7 @@ services:
 
 env:
   global:
-    - LOCAL_POSTGRES_DATABASE_NAME=congressionaldata
+    - LOCAL_POSTGRES_DATABASE_NAME="congressionaldata"
     - DJANGO_SETTINGS_MODULE=congressionaldata.settings.local
     - secure: "gcWllYC9YrpDNGyG7xZbFim2CIjAvZc7/FDBgCWPPE5uQYtenEuT/kgS0cYDIfFlHFCPHSo+CUyCFIHH2XS+3AD6PtXgCB38p61aomXSh/fksby/eHq5TkuJ/dN6m2FZkrwQflMAhAVzoqhgtNqm1JfnPVyuFXHqWUsIpv8iX15+146dghg1dt26B12/xben98XeWnM37jBr2fBdI/BRpdM8VFdLA4DNK2jHm3aDbAB2oh+Hg3OkgXQpM6ftDRJ30gU5Q/fA7qdAE75oI51M5Dl8ilqdO30cjdSRixEFZRHd2vzH0oRc2TU8J1+XXflfwB5HTnOIerhppgCOO8ZNgjI1zKzr6j61psBtGd6cMFRi+SEAbtsveeRKGjzkKLUFZgv8J462JnXgjSFB4f0AzOfrzrUarFH/nJaDGLqP50A4ABynqR0MA6fsjENz0/2Rx8mEGkaqLGEQciefdUE7yJ9jhmbPasyv6yXcoRBowQMa6dGhw1b2ZPhZ9qjkiPRPmmJh/1xtKrX7umDzn8bSoDEGD5QsSesVspH/Y1kbbKy9I2Z+DgrV7cJk+6h1X/cKfKwtBsVl9dnmqahO/Xi5ILw83olgVVVjuUEu57CP9smOtjL77cxakphHA819Rc/zBrPKcLS2wla58h2UL9OVD27ctECBnE8Db6OA5TDBvk0="
     - secure: "jdzZgDoYICrEezrCk5PQzWlbui6/jdOiAHbwK76hUGAJS5OLl9gBUPcNbNr+iUutcEgd7W+qqObY9YLeVwkGcAvdqNRDi3LTXTzimTFpy37VEd61pwbb5QlWafmi6bd3pD0j2m5rSNlLOaRWRRtlik5Jjm+WtZbRLQELNMEbycvinVwOJs8bWpzq9GIjYbGUNG0+4v1AqArWSPMu7vDckJ91ihyKSC0sawRwZdtLF12Zf023ouF3Blp0V/oq5kbEVTJ2/zkRD6PsfvPJ33K4rnuhSiPRaOvU3nULHKAQ9g/8QRxRNWewf+s0QfhPy0tX+qBaPAlBSrJIixhs0I083yak0ETJeFz4PXlqPqJ8voi2w4H7Y+kUvqP168IcDKnUd+MSgZIncv6riKSJFBPY1F7wNyWofpwdWELVZ7Y6LzrvUF9qkG03XLxxCwKQ6EaUBSsj+BXoBY1aJbF/0SptudiPJk6KcScnkpnoM0veDmgT+eshkyFd5ZpyzoEfiEYTmb+Agu/Ew4cStx9DXRF9eVMGoOvI2fLa+2kk+j1cGZTFFvzeyuQD5lPJthGf5gnEI+G8j8kEJDtyJz2f5iWiQye1SyfLxPQrjXRQNbl6V5pSp0nMf+YL8H+T/EMzLrmks7ttU7WncXUl2gHnbQH8PAited0h1Ni4V0vXd8Wnofc="
@@ -28,13 +28,13 @@ before_install:
 install:
   - pip install -r requirements.txt
   - pip install -r requirements.txt -t lib
-  - pip install coveralls
 
 before_script:
   - psql -c "create database ${LOCAL_POSTGRES_DATABASE_NAME};" -U postgres
 
 script:
-  - ./manage.py test
+  - coverage run --source='.' manage.py test
+  - coverage report
 
 after_script:
   - deactivate

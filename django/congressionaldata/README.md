@@ -125,9 +125,9 @@ This file contains the settings specific to your local environment. Notice the D
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': LOCAL_POSTGRES_DATABASE_NAME,
-        'USER': LOCAL_POSTGRES_USER,
-        'PASSWORD': LOCAL_POSTGRES_PASSWORD,
+        'NAME': os.environ['LOCAL_POSTGRES_DATABASE_NAME'],
+        'USER': os.environ['LOCAL_POSTGRES_USER'],
+        'PASSWORD': os.environ['LOCAL_POSTGRES_PASSWORD'],
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -139,9 +139,10 @@ Make sure to create the directory and file described below.
 
 This file is ignored by git and contains the actual credentials which will be used to authenticate your local postgres.
 ```python
-LOCAL_POSTGRES_NAME = 'congressionaldata'
-LOCAL_POSTGRES_USER = '<username>'
-LOCAL_POSTGRES_PASSWORD = '<password>'
+import os
+os.environ['LOCAL_POSTGRES_DATABASE_NAME'] = 'congressionaldata'
+os.environ['LOCAL_POSTGRES_USER'] = '<username>'
+os.environ['LOCAL_POSTGRES_PASSWORD'] = '<password>'
 print('Local Secrets Loaded!')
 ```
 It is recommended to contain the print statement at the bottom of your local secrets file for debugging purposes.
