@@ -3,10 +3,9 @@
 Welcome to the Congressional Data Django README file. This is a living breathing document so don't be shy and feel free to contribute documentation!
 
 
-Who are you?
+**Who are you?**
 
 - [Developer](#getting-started)
-- [Techops](#techops)
 - [DevOps](#devops)
 
 ## Getting Started
@@ -200,6 +199,45 @@ Follow the steps output by this command.
 3. Check our IDE configuration
 
 
-## TechOps
-
 ## DevOps
+
+### CI with Travis
+
+### Secret Injection with Travis
+
+Production secrets such as special keys, tokens, and credentials cannot be stored in the project repository. Travis allows us to encrypt all of our secrets using public key unique to each secret. That secret will only be able to be decrypted using the private key stored on travis.
+
+#### Setup
+
+Before you install the travis cli tool, first make sure that you have updated your Ruby and Gem versions. There are some known issues with the travis cli tool with ruby versions < 2.5
+
+Once you have a recent version of Ruby and Gem, install travis
+
+```bash
+gem install travis -v 1.8.8 --no-rdoc --no-ri
+```
+
+#### Storing Secrets
+
+First thing you need to do is authenticate the travis cli tool so you can have access to your travis account.
+
+```
+travis login
+```
+
+Now that you have installed travis, and authenticated, you can begin storing secrets.
+
+Suppose you want to store the key value pair SOMEVAR="secretvalue"
+
+Travis will generate an RSA keypair exposing the public key at https://api.travis-ci.org/repos/somevar/key. The private key will remain secret known only to travis. The cli tool will use this new public key to encrypt the key value pair. The --add flag will immediately upload this encrypted keyvalue pair to travis keeping the encrypted secret out of the repo.
+
+Optionally, you may remove the --add flag to generate the encrypted secret locally and put it in the travis.yml manually. You will also have to specify the organization and repository the secret will belong to, as secrets are not shared across repositories.
+
+```bash
+travis encrypt SOMEVAR="secretvalue" --add -r <organization>/<repository>
+```
+
+This will store the encrypted secret on travis
+```bash
+export SOMEVAR="secretvalue"
+```
