@@ -10,7 +10,6 @@ services:
 before_install:
   - cd django/congressionaldata
   - export DJANGO_SETTINGS_MODULE=congressionaldata.settings.dev
-  - virtualenv env -p python3
 
 install:
   - pip install -r requirements.txt -t lib
