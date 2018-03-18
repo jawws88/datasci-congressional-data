@@ -229,9 +229,8 @@ Now that you have installed travis, and authenticated, you can begin storing sec
 
 Suppose you want to store the key value pair SOMEVAR="secretvalue"
 
-Travis will generate an RSA keypair exposing the public key at https://api.travis-ci.org/repos/somevar/key. The private key will remain secret known only to travis. The cli tool will use this new public key to encrypt the key value pair. The --add flag will immediately upload this encrypted keyvalue pair to travis keeping the encrypted secret out of the repo.
+Travis will generate an RSA keypair exposing the public key at https://api.travis-ci.org/repos/somevar/key. The private key will remain secret known only to travis. The cli tool will use this new public key to encrypt the key value pair. The --add flag will immediately add this encrypted keyvalue pair to the travis.yml file.
 
-Optionally, you may remove the --add flag to generate the encrypted secret locally and put it in the travis.yml manually. You will also have to specify the organization and repository the secret will belong to, as secrets are not shared across repositories.
 
 ```bash
 travis encrypt SOMEVAR="secretvalue" --add -r <organization>/<repository>
