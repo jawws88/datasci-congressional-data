@@ -11,11 +11,14 @@ services:
 env:
   - FRANK="TEST" secure: "IwfVT7C39/bn95s2p4e/YyYjVy1pGmXs59p8c5ppMPvkghBNues7Yk6D36pW8+3Xy4XRatr/b2Xo1jMxrbM+29sYxBDgYvK2rQAhQ4N3CTvtd9nvb9GRCHMil4E6z9SACUNCwzH/Qk2T32po3RBeHwRpL2PsdDr281GCxlMjojbvFqNN82GH6sQ1rFhg2bn/uAynJ3DvNaA8MLh/eCZ4jmMeW96FTDmV3+bTMvwZTejZWSYJmCfGOgMJ0fEFDeC6pcJwsE2avd1Odfzq6SypP0KYOhzTtaMvjAJy1AWay1MlsZiVuRUVdxuhTNcA1V9xhHyA95m9Ey/H4qu5DUZh8TqMIeuc0llqcVHWUn0vfVbT74OB/EYLzvDFgf4Cu+0pVZvPRzlZoFvCfrn0+e5jlPj354GsqxtCkDF+EtxPy4CjVcE6WEjfo20KuVP4CRdsZjhs92DYZMKI0pShQT005Nn3gG2Qvr8eZzy4xk9G4g+4KinJLZLvEbfOZNc1Uw7zrkHY9i5qxvX8OAjTOaraRkVcoSzKs6hoftztcVEmXviMNrbFN03Y5HRP5gXH3hxHfqNdfWzj8mr76fjEL/ZigfqtaxiC3l038xJOKYSuI9+fbO2GQwfxbzLqOD/syuWyCAW+XHImf8uQHA5x7lVg53s/8fVGpD8/93XCMPNS62U="
 
-
+notifications:
+    slack:
+      - secure: "H3zBVo2m6roCEQ0FAdeajjeGRWoggDAzA4NfJDTrzSLAb/4Vay968ZillTS+v1v9bA+Op0rufij2QTOi8a80/nDBBU8ulgyD/o4k5mszmI3X3ZSSq+N6ALWFoUFbqZH09grj4z+GA2ZOCRT318uWJEHfQjfkKRef8pVKOn1d5m9sBUCTbmTR7T4in9Fi0xYZeSPGrnemIRoTMh661gqf/xczAXkzeWY1G3a5J+CX2cljcvKE/+gCWparnL4PGcFTzST2+/7mPTuEr6Ddug9VAAsOuNQDcKPXb/FWk6dWzWuiM3jFJI3Wc9i1Vs5uF5VFgWbLXmurxHCBsxbdFulxPbQL9+9C8s6aoOHV3QOSHMPBq6UusDHBKVFBE2sfYCdAkLyitNkdCVpvkV8znW4CcozEsfF376hICJr9QdBuQkyeMs0Ra9Q4Iutx5IaBNIqCrxzgUW2KH3oeVucOBbg5SuFocm58kr/FlMtXP/hN5S2MrSk0e5hFNkVu8WyPKDUsSG7R/540M1wYREWHGLoezx4bz3iRyPqlF3HMACbJquQC2K3AUuKkAEnIMjxygEbV5x8e/5NZrsjQQUq+RjqLgKBWV5wNNCcwahAt8GBugPbKIp8pDa7tSFNldqwrtnpyBTAr3Q3l51ZYmKoceNtsJo9od+z1o5+bd0xtOH5EBOM="
 before_install:
   - echo "Attemptint to echo secret..."
   - echo ${SOMEVAR}
   - echo ${FRANK}
+  - echo ${JOHN}
   - cd django/congressionaldata
   - pip install virtualenv
   - virtualenv venv
