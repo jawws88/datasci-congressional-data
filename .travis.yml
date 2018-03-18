@@ -4,7 +4,11 @@ virtualenv:
 python:
   - 3.6
 
-services: postgresql
+services:
+  -  postgresql
+
+env: # => 4
+   -DJANGO=2.0.3
 
 before_install:
   - cd django/congressionaldata
