@@ -1,4 +1,4 @@
---
+--https://modeanalytics.com/editor/code_for_san_francisco/reports/b55118c60f67
 --candidate refund per election cycle
 --include scaled refund trans amount vs total trans amount; 
 --refund = negative transaction
