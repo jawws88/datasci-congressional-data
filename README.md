@@ -1,4 +1,4 @@
-# datasci-congressional-data [![Build Status](https://travis-ci.org/tramstheman/datasci-congressional-data.svg?branch=master)](https://travis-ci.org/tramstheman/datasci-congressional-data)
+# datasci-congressional-data [![Build Status](https://travis-ci.org/tramstheman/datasci-congressional-data.svg?branch=master)](https://travis-ci.org/tramstheman/datasci-congressional-data) [![Coverage Status](https://coveralls.io/repos/github/tramstheman/datasci-congressional-data/badge.svg)](https://coveralls.io/github/tramstheman/datasci-congressional-data)
 
 This project is a part of the [Data Science Working Group](http://datascience.codeforsanfrancisco.org) at [Code for San Francisco](http://www.codeforsanfrancisco.org) in collaboration with CSUMB Computer Science students who are completing their [capstone project](https://sites.google.com/a/csumb.edu/cst-499-computer-science-capstone-course/mentors-partners).  Other DSWG projects can be found at the [main GitHub repo](https://github.com/sfbrigade/data-science-wg).
 
