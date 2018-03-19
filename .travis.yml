@@ -26,6 +26,7 @@ before_script:
 - psql -c "CREATE DATABASE ${LOCAL_POSTGRES_DATABASE_NAME};" -U postgres
 - psql -c "CREATE USER ${LOCAL_POSTGRES_USER} WITH LOGIN PASSWORD '${LOCAL_POSTGRES_PASSWORD}';" -U postgres
 - psql -c "GRANT ALL PRIVILEGES ON DATABASE ${LOCAL_POSTGRES_DATABASE_NAME} TO ${LOCAL_POSTGRES_USER};" -U postgres
+- psql -c "ALTER ROLE ${LOCAL_POSTGRES_USER} CREATEDB;" -U postgres
 script:
 - coverage run --source='.' manage.py test election_data
 - coverage report
