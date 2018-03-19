@@ -19,6 +19,7 @@ before_install:
 - virtualenv venv
 - source venv/bin/activate
 install:
+- echo "$LOCAL_POSTGRES_DATABASE_NAME"
 - pip install -r requirements.txt
 - pip install -r requirements.txt -t lib
 - pip install coverage==4.5.1
