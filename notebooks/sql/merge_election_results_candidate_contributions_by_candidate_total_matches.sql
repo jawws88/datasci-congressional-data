@@ -17,8 +17,14 @@ select
   count(candidate_name) as occur_two,
   regexp_replace(lower(split_part(candidate_name, ',', 2) || split_part(candidate_name, ',', 1)), '[^a-z]', '', 'g') as re_name_two
  from data_ingest.casos__california_candidate_statewide_election_results
- where county_name = 'State Totals' and contest_name <> 'President' and contest_name <> 'US Senate - 1'
- group by candidate_name
+where county_name like 'State Totals' 
+  and contest_name not like 'President%'
+  and contest_name not like 'president%'
+  and contest_name not like 'US Senate%' 
+  and contest_name not like 'United States Representative%'
+  and contest_name not like 'us'
+  and contest_name not like 'united%'
+  and contest_name not like '%Congressional District' group by candidate_name
 )
 
 select count(sub.temp )
