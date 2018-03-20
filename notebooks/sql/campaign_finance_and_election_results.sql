@@ -17,6 +17,7 @@ select
   rank() over (partition by contest_name order by vote_total desc) = 1 as is_winner
 from data_ingest.casos__california_candidate_statewide_election_results
  where county_name = 'State Totals' and contest_name <> 'President' and contest_name <> 'US Senate - 1'
+   and contest_name not like 'United States Representative%'
 )
 
 select
