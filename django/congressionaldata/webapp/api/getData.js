@@ -7,7 +7,7 @@ import safeJSONParse from '../util/safeJSONParse';
  * @param {function} cb - The callback to call with the error and data.
  */
 function getData(route, cb) {
-    request.get(`http://localhost:8000/${route}`)
+    request.get(`http://34.211.146.5:8000/${route}`)
     .end((err, res) => {
         if (err) {
             return cb(err);

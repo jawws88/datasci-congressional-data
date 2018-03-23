@@ -4,7 +4,7 @@
   "description": "congressional data",
   "main": "index.js",
   "scripts": {
-    "start_web:dev": "webpack-dev-server --config ./webpack.dev.js --env.dev",
+    "start_web:dev": "webpack-dev-server --config ./webpack.dev.js --env.dev --host 0.0.0.0",
     "start": "API_ENDPOINT=$API_ENDPOINT NODE_ENV=prod node server.js",
     "build:dev": "node_modules/webpack/bin/webpack.js --config ./webpack.dev.js --output-filename ./bundle.js",
     "lint": "./node_modules/.bin/eslint $(git ls-files '*.js')"

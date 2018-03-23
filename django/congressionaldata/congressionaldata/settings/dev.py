@@ -15,12 +15,18 @@ import os
 import urllib.parse
 
 # Read DB URI From Environment Variable
+# Note env var must be defined using `export`
 CD_DWH = os.getenv('CD_DWH')
 
 PARSED_DBURI = urllib.parse.urlparse(CD_DWH)
-
-ALLOWED_HOSTS = []
-CORS_ORIGIN_WHITELIST = ('localhost:8080', '127.0.0.1:8080')
+print(CD_DWH)
+ALLOWED_HOSTS = ['*']
+CORS_ORIGIN_WHITELIST = (
+    'localhost:8080',
+    '127.0.0.1:8080',
+    # AWS ephemeral IP
+    '34.211.146.5:8080'
+)
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases

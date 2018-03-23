@@ -119,13 +119,14 @@ DATABASES = {
     }
 }
 ```
-Make sure to create the directory and file described below.
+In the same directory as this readme, create a directory called "secrets" containing these files:
 
+**secrets/__init__.py**
 **secrets/local_settings.py**
 
-This file is ignored by git and contains the actual credentials which will be used to authenticate your local postgres.
+This directory is ignored by git and contains the actual credentials which will be used to authenticate your local postgres.
 ```python
-LOCAL_POSTGRES_NAME = 'congressionaldata'
+LOCAL_POSTGRES_DATABASE_NAME = 'congressionaldata'
 LOCAL_POSTGRES_USER = '<username>'
 LOCAL_POSTGRES_PASSWORD = '<password>'
 print('Local Secrets Loaded!')
@@ -134,7 +135,7 @@ It is recommended to contain the print statement at the bottom of your local sec
 
 #### Choosing an Environment
 
-If you are using Djanga manage to run your local server you can use the settings flag to choose which environment to run.
+You can use the settings flag to choose which environment to run.
 ```bash
 ./manage.py runserver --settings=congressionaldata.settings.local
 ```
