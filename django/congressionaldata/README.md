@@ -1,8 +1,6 @@
-# Congressional Data Django [![api-status](https://img.shields.io/website-up-down-green-red/http/not_yet_deployed.svg)]() [![frontend-status](https://img.shields.io/website-up-down-green-red/http/not_yet_deployed.svg)]()
- [![Build Status](https://travis-ci.org/tramstheman/datasci-congressional-data.svg?branch=master)](https://travis-ci.org/tramstheman/datasci-congressional-data) [![Coverage Status](https://coveralls.io/repos/github/tramstheman/datasci-congressional-data/badge.svg)](https://coveralls.io/github/tramstheman/datasci-congressional-data)
+# Congressional Data Django
 
 Welcome to the Congressional Data Django README file. This is a living breathing document so don't be shy and feel free to contribute documentation!
-
 
 **Who are you?**
 
