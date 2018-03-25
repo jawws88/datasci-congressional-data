@@ -34,7 +34,6 @@ install:
 - pip install coverage==4.5.1
 - pip install python-coveralls
 - pip install pycodestyle
-- pip install pylint
 before_script:
 - psql -c "CREATE DATABASE ${LOCAL_POSTGRES_DATABASE_NAME};" -U postgres
 - psql -c "CREATE USER ${LOCAL_POSTGRES_USER} WITH LOGIN PASSWORD '${LOCAL_POSTGRES_PASSWORD}';"
@@ -42,7 +41,7 @@ before_script:
 - psql -c "GRANT ALL PRIVILEGES ON DATABASE ${LOCAL_POSTGRES_DATABASE_NAME} TO ${LOCAL_POSTGRES_USER};"
   -U postgres
 - psql -c "ALTER ROLE ${LOCAL_POSTGRES_USER} CREATEDB;" -U postgres
-- pylint --output-format=text api congressionaldata election_data > pylint-report.txt
+- pycodestyle --exclude=migrations,lib,venv .
 script:
 - coverage run --source='.' manage.py test election_data
 - coverage report --omit="*venv*","manage.py"
@@ -63,7 +62,6 @@ deploy:
   on: master
 after_success:
 - coveralls
-- pycodestyle --exclude=migrations,lib,venv .
 notifications:
   slack:
     secure: KiRqrqp+qAX6ieUswh9dgCkLwz0j2i38djZiYezTBPP2gjCQrz442rJ5+ayIJ0XGjEScTfnLrm8SaCnCkMOe09e5yZ4LFx00rhRcT/XSqG2/IVArlsu8Z9Mzvl2+Q0gbP5N6NH8VdELV5a+zkQoXfQSASQv7h/pxXx4j9xmQ+1kTYY6Zv9JTA5MreqLvMrsvjE3bOTvxF+8vDR6SsiGPyPSGl7FHo8LgtVdhYxy/l3+dnlXHBm0C3Hpq8gLGl4STQ059nnY8sB3y2g6Ccr/h3DfVGc+SXUS6CFQwK9DjZTUsXlEuIoUchgsFlKUsCrNiDBi7RCds7YbB1a74YjuiPBcez5vFspX0qi4qTmHrpKVEX8k2+pTdBLAxu/t5ZMZXapauindBZf2abj3Gad6EhS8kiWmZb5+QAoqylfgk3WaxAgDNNa2EWdSr5YXX/KyVqP2CRTbqo3Vh0fZgpeKjssxa4ua8yLe7MVo7SdKTzzU3sJkdUXP6OO+7EH1P5V+GEOaRUkh4nG393aaSsF4nvLXeY9legvkQDjAXDFxPnBjUdjYT6xjsc1npwcdm4YL7UwW6xP+Y+nm5tCEaGOe9NcznB0agYf/o8d7UByMs1XrsnLmeplNKNqhXKkaGeTun8O4F3D2p37mhq2MXD8uB3skDe2IjWu0JJWGur4ImDQ8=
