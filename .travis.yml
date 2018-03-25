@@ -42,7 +42,7 @@ before_script:
 - psql -c "GRANT ALL PRIVILEGES ON DATABASE ${LOCAL_POSTGRES_DATABASE_NAME} TO ${LOCAL_POSTGRES_USER};"
   -U postgres
 - psql -c "ALTER ROLE ${LOCAL_POSTGRES_USER} CREATEDB;" -U postgres
-- pylint --output-format=html api congressionaldata election_data > /tmp/pylint-report.html
+- pylint --output-format=text api congressionaldata election_data > pylint-report.txt
 script:
 - coverage run --source='.' manage.py test election_data
 - coverage report --omit="*venv*","manage.py"
