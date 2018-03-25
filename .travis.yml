@@ -41,7 +41,7 @@ before_script:
 - psql -c "GRANT ALL PRIVILEGES ON DATABASE ${LOCAL_POSTGRES_DATABASE_NAME} TO ${LOCAL_POSTGRES_USER};"
   -U postgres
 - psql -c "ALTER ROLE ${LOCAL_POSTGRES_USER} CREATEDB;" -U postgres
-- pycodestyle --exclude=migrations,lib,venv .
+- pycodestyle --exclude=migrations,lib,venv "./"
 script:
 - coverage run --source='.' manage.py test election_data
 - coverage report --omit="*venv*","manage.py"
