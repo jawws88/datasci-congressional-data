@@ -57,32 +57,32 @@ class RowChart extends Component {
 					.attr('height', d => height - margin.bottom - y(d[yKey]));
 		}
 		else { //horizontal
-		    	const margin = {top: 20, right: 0, bottom: 300, left: 80};
+		    	const margin = {top: 20, right: 0, bottom: 80, left: 300};
 
 			const x = scaleLinear()
-				.range([height - margin.bottom, margin.top])
+				.range([0, width])
 
 			const y = scaleBand()
-				.range([margin.left, width - margin.right])
+				.range([height, 0])
 				.padding(0.1)
 			
 			x.domain([0, max(data, d => +d[yKey])]).nice();
 			y.domain(data.map(d => d[xKey]));
 
 			g.append('g')
-				.attr('transform', `translate(0,${height - margin.bottom})`)
-				.call(axisBottom(x))
+				.attr('transform', `translate(0,${height})`)
+				.call(axisBottom(x)
+				.tickSizeOuter(0))
 
 			g.append('g')
 				.attr('transform', `translate(${margin.left},0)`)
-				.call(axisLeft(y)
-				.tickSizeOuter(0))
-				.selectAll('text')
+				.call(axisLeft(y))
+				/*.selectAll('text')
 					.attr('x', 0)
 					.attr('y', 9)
 					.attr('dy', '.35em')
-					.attr('transform', 'rotate(90)')
-					.style('text-anchor', 'start')
+					.attr('transform', 'rotate(180)')
+					.style('text-anchor', 'start')*/
 
 			g.selectAll()
 				.data(data)
@@ -90,8 +90,8 @@ class RowChart extends Component {
 					.attr('fill', barColor)
 					.attr('x', d => x(d[yKey]))
 					.attr('y', d => y(d[xKey]))
-					.attr('width', y.bandwidth())
-					.attr('height', d => height - margin.bottom - x(d[yKey]));
+					.attr('height', y.bandwidth())
+					.attr('width', d => x(d[yKey]));
 		}
     }
 
