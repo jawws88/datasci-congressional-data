@@ -24,7 +24,7 @@ class RowChart extends Component {
 		    const margin = {top: 20, right: 0, bottom: 300, left: 80};
 
 			const x = scaleBand()
-				.range([margin.left, width - margin.right])
+				.range([0, width - margin.left - margin.right])
 				.padding(0.1)
 
 			const y = scaleLinear()
@@ -33,7 +33,7 @@ class RowChart extends Component {
 			y.domain([0, max(data, d => +d[yKey])]).nice();
 
 			g.append('g')
-				.attr('transform', `translate(0,${height - margin.bottom})`)
+				.attr('transform', `translate(0,${height - margin.bottom - margin.top})`)
 				.call(axisBottom(x)
 					.tickSizeOuter(0))
 				.selectAll('text')
@@ -58,31 +58,27 @@ class RowChart extends Component {
 		}
 		else { //horizontal
 		    	const margin = {top: 20, right: 0, bottom: 80, left: 300};
-
 			const x = scaleLinear()
-				.range([0, width])
+				.range([0, width - margin.right - margin.left])
 
 			const y = scaleBand()
-				.range([height, 0])
+				.range([height - margin.top - margin.bottom, 0])
 				.padding(0.1)
 			
 			x.domain([0, max(data, d => +d[yKey])]).nice();
 			y.domain(data.map(d => d[xKey]));
+			
+			g.append('g')
+				.attr('transform', `translate(${margin.left}, ${margin.top})`)
 
 			g.append('g')
-				.attr('transform', `translate(0,${height})`)
+				.attr('transform', `translate(0,${height - margin.left - margin.right})`)
 				.call(axisBottom(x)
 				.tickSizeOuter(0))
 
 			g.append('g')
 				.attr('transform', `translate(${margin.left},0)`)
 				.call(axisLeft(y))
-				/*.selectAll('text')
-					.attr('x', 0)
-					.attr('y', 9)
-					.attr('dy', '.35em')
-					.attr('transform', 'rotate(180)')
-					.style('text-anchor', 'start')*/
 
 			g.selectAll()
 				.data(data)
