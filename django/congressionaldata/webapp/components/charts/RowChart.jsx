@@ -24,7 +24,7 @@ class RowChart extends Component {
 		    const margin = {top: 20, right: 0, bottom: 300, left: 80};
 
 			const x = scaleBand()
-				.range([0, width - margin.left - margin.right])
+				.range([margin.left, width - margin.right])
 				.padding(0.1)
 
 			const y = scaleLinear()
@@ -33,7 +33,7 @@ class RowChart extends Component {
 			y.domain([0, max(data, d => +d[yKey])]).nice();
 
 			g.append('g')
-				.attr('transform', `translate(0,${height - margin.bottom - margin.top})`)
+				.attr('transform', `translate(0,${height - margin.bottom})`)
 				.call(axisBottom(x)
 					.tickSizeOuter(0))
 				.selectAll('text')
@@ -72,7 +72,7 @@ class RowChart extends Component {
 				.attr('transform', `translate(${margin.left}, ${margin.top})`)
 
 			g.append('g')
-				.attr('transform', `translate(0,${height - margin.left - margin.right})`)
+				.attr('transform', `translate(0,${height - margin.bottom - margin.top})`)
 				.call(axisBottom(x)
 				.tickSizeOuter(0))
 
