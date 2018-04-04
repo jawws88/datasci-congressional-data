@@ -28,7 +28,7 @@ class RowChart extends Component {
 				.padding(0.1)
 
 			const y = scaleLinear()
-				.range([height - margin.bottom - margin.top, 0])
+				.range([height - margin.bottom, margin.top])
 
 			x.domain(data.map(d => d[xKey]));
 			y.domain([0, max(data, d => +d[yKey])]).nice();
@@ -58,13 +58,12 @@ class RowChart extends Component {
 					.attr('height', d => height - margin.bottom - y(d[yKey]));
 		}
 		else { //horizontal orientation
-		    	const margin = {top: 20, right: 20, bottom: 80, left: 300};
+		    	const margin = {top: 20, right: 350, bottom: 80, left: 320};
 			const x = scaleLinear()
-				//.range([margin.left, width - margin.right])
 				.range([0, width - margin.right])
 
 			const y = scaleBand()
-				.range([height - margin.bottom, margin.top])
+				.range([height - margin.bottom - margin.top, 0])
 				.padding(0.1)
 			
 			x.domain([0, max(data, d => +d[yKey])]).nice();
@@ -84,7 +83,7 @@ class RowChart extends Component {
 				.data(data)
 				.enter().append('rect')
 					.attr('fill', barColor)
-					.attr('x', d => margin.left)//d => x(d[yKey]))
+					.attr('x', d => margin.left)
 					.attr('y', d => y(d[xKey]))
 					.attr('width', d => x(d[yKey]))
 					.attr('height', d => y.bandwidth());
