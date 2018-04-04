@@ -28,7 +28,8 @@ class RowChart extends Component {
 				.padding(0.1)
 
 			const y = scaleLinear()
-				.range([height - margin.bottom, margin.top])
+				.range([height - margin.bottom - margin.top, 0])
+
 			x.domain(data.map(d => d[xKey]));
 			y.domain([0, max(data, d => +d[yKey])]).nice();
 
@@ -56,38 +57,37 @@ class RowChart extends Component {
 					.attr('width', x.bandwidth())
 					.attr('height', d => height - margin.bottom - y(d[yKey]));
 		}
-		else { //horizontal
-		    	const margin = {top: 20, right: 0, bottom: 80, left: 300};
+		else { //horizontal orientation
+		    	const margin = {top: 20, right: 20, bottom: 80, left: 300};
 			const x = scaleLinear()
-				.range([0, width - margin.right - margin.left])
+				//.range([margin.left, width - margin.right])
+				.range([0, width - margin.right])
 
 			const y = scaleBand()
-				.range([height - margin.top - margin.bottom, 0])
+				.range([height - margin.bottom, margin.top])
 				.padding(0.1)
 			
 			x.domain([0, max(data, d => +d[yKey])]).nice();
 			y.domain(data.map(d => d[xKey]));
 			
-			g.append('g')
-				.attr('transform', `translate(${margin.left}, ${margin.top})`)
 
-			g.append('g')
-				.attr('transform', `translate(0,${height - margin.bottom - margin.top})`)
+			g.append('g') 
+				.attr('transform',`translate(${margin.left}, ${height - margin.bottom - margin.top})`)
 				.call(axisBottom(x)
 				.tickSizeOuter(0))
 
 			g.append('g')
-				.attr('transform', `translate(${margin.left},0)`)
+				.attr('transform', `translate(${margin.left}, 0)`) 
 				.call(axisLeft(y))
 
 			g.selectAll()
 				.data(data)
 				.enter().append('rect')
 					.attr('fill', barColor)
-					.attr('x', d => x(d[yKey]))
+					.attr('x', d => margin.left)//d => x(d[yKey]))
 					.attr('y', d => y(d[xKey]))
-					.attr('height', y.bandwidth())
-					.attr('width', d => x(d[yKey]));
+					.attr('width', d => x(d[yKey]))
+					.attr('height', d => y.bandwidth());
 		}
     }
 
